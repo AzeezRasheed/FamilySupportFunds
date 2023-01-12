@@ -60,7 +60,7 @@ function Category() {
     marital_status: "",
     email: "",
     disability: "",
-    disability: "",
+    occupation: "",
     category: "",
   };
 
@@ -105,21 +105,21 @@ function Category() {
       };
       toast.success("Form Submitted Successfully");
       console.log(formData);
-
-      setName(" ");
-      setZipCode(" ");
-      setHomeAddress(" ");
-      setSelectedCountry(" ");
-      setPhone(" ");
-      setDate(" ");
-      setEmail(" ");
-      setOccupation(" ");
-      setIncome(" ");
-      setSelectedStatus(" ");
-      setSelectedDisability(" ");
     } else {
       toast.error("Please Fill All Fields");
     }
+
+    setName(" ");
+    setZipCode(" ");
+    setHomeAddress(" ");
+    setSelectedCountry(" ");
+    setPhone(" ");
+    setDate(" ");
+    setEmail(" ");
+    setOccupation(" ");
+    setIncome(" ");
+    setSelectedStatus(" ");
+    setSelectedDisability(" ");
   };
 
   return (
