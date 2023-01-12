@@ -35,6 +35,7 @@ function Category() {
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
   const [income, setIncome] = useState("");
+  const [occupation, setOccupation] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedDisability, setSelectedDisability] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
@@ -59,6 +60,8 @@ function Category() {
     marital_status: "",
     email: "",
     disability: "",
+    disability: "",
+    category: "",
   };
 
   useEffect(() => {
@@ -80,6 +83,7 @@ function Category() {
       phone &&
       date &&
       income &&
+      occupation &&
       selectedCountry &&
       selectedDisability &&
       selectedStatus
@@ -96,9 +100,23 @@ function Category() {
         marital_status: selectedStatus,
         email: email,
         disability: selectedDisability,
+        occupation: occupation,
+        category: id,
       };
       toast.success("Form Submitted Successfully");
       console.log(formData);
+
+      setName(" ");
+      setZipCode(" ");
+      setHomeAddress(" ");
+      setSelectedCountry(" ");
+      setPhone(" ");
+      setDate(" ");
+      setEmail(" ");
+      setOccupation(" ");
+      setIncome(" ");
+      setSelectedStatus(" ");
+      setSelectedDisability(" ");
     } else {
       toast.error("Please Fill All Fields");
     }
@@ -332,6 +350,10 @@ function Category() {
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Occupation"
+                  value={occupation}
+                  onChange={(e) => {
+                    setOccupation(e.target.value);
+                  }}
                 />
               </div>
 
