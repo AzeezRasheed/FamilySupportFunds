@@ -21,14 +21,7 @@ function footer() {
                   Home
                 </a>
               </div>
-              <div className="px-5 py-2">
-                <a
-                  href="/blog"
-                  className="text-base leading-6 text-white hover:text-blue-500"
-                >
-                  Blog
-                </a>
-              </div>
+            
               <div className="px-5 py-2">
                 <a
                   href="/about"
