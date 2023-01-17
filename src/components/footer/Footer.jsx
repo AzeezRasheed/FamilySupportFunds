@@ -38,14 +38,7 @@ function footer() {
                   Contact Us
                 </a>
               </div>
-              <div className="px-5 py-2">
-                <a
-                  href="/privacy-policy"
-                  className="text-base leading-6 text-white hover:text-blue-500"
-                >
-                  Privacy Policy
-                </a>
-              </div>
+          
             </nav>
           </div>
         </div>
