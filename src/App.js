@@ -26,9 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-
         <Route path="/category/:id" element={<Category />} />
-
         <Route path="/category" element={<Category />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/privacy-policy" element={<Policy />} />

@@ -9,74 +9,94 @@ import FIcon from "../../assets/FIcon.png";
 import SIcon from "../../assets/SIcon.png";
 import TIcon from "../../assets/TIcon.png";
 import FthIcon from "../../assets/FthIcon.png";
-import { useParams } from "react-router-dom";
-import countries from "i18n-iso-countries";
-import enLocate from "i18n-iso-countries/langs/en.json";
-import itLocate from "i18n-iso-countries/langs/it.json";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-countries.registerLocale(enLocate);
-countries.registerLocale(itLocate);
+import dataForCategory from "./dataForCategory";
+import { Country, State, City } from "country-state-city";
 
 function Category() {
-  const countryObj = countries.getNames("en", { select: "official" });
-  const countryArr = Object.entries(countryObj).map(([key, value]) => {
-    return {
-      label: value,
-      value: key,
-    };
-  });
+  // const states = csc.getStatesOfCountry(country.isoCode);
+  // states.forEach((state) => {
+  //   const cities_of_state = csc.getCitiesOfState(countryCode, state.isoCode);
+  //   console.log(state, ":", cities_of_state);
+  // });
+  // const countryObj = countries.getNames("en", { select: "official" });
+  // const cityArr= City.getCitiesOfState(State.isoCode).map((city) => ({ label: city.name, value: city.id, ...city }));
+  // const countryArr = Object.entries(countryObj).map(([key, value]) => {
+  //   return {
+  //     label: city.name,
+  //     value: key,
+  //   };
+  // });
 
-  const [name, setName] = useState("");
+  // const country = Country.getCountryByCode(countryCode);
+  const navigate = useNavigate();
+  const data = dataForCategory;
+  const countryCode = "US";
+  const stateArr = State.getStatesOfCountry(countryCode).map((state) => ({
+    label: state.name,
+    value: state.id,
+    ...state,
+  }));
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [homeAddress, setHomeAddress] = useState("");
   const [zipCode, setZipCode] = useState("");
-  const [city, setCity] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
   const [income, setIncome] = useState("");
   const [occupation, setOccupation] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
   const [selectedDisability, setSelectedDisability] = useState("");
+  const [selectedAge, setSelectedAge] = useState("");
+  const [ethnicity, setEthnicity] = useState("");
+  const [citizenshipStatus, setCitizenshipStatus] = useState("");
+  const [selectedGender, setSelectedGender] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
-  const selectedCountryHandler = (value) => {
-    setSelectedCountry(value);
-  };
 
+  const selectedStateHandler = (value) => {
+    setSelectedState(value);
+  };
   const { id } = useParams();
   const type = id.split("-").join(" ");
   const [algorithm, setAlgorithm] = React.useState("");
   const [isActive, setIsActive] = useState(false);
-  const [selected, setSelected] = useState("");
 
   let formData = {
-    full_name: "",
+    first_name: "",
+    last_name: "",
     home_address: "",
     zip_code: "",
     phone_number: "",
-    country: "",
+    state: "",
+    city: "",
     monthly_income: "",
     date_of_birth: "",
     marital_status: "",
     email: "",
+    age: "",
+    gender: "",
     disability: "",
     occupation: "",
     category: "",
+    ethnicity: "",
+    citizenshipStatus: "",
   };
 
   useEffect(() => {
     setAlgorithm(id);
   }, [id]);
 
-  const handleChange = (event) => {
-    setSelected(event.target.value);
-  };
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
     if (
-      name &&
+      firstName &&
+      lastName &&
       homeAddress &&
       zipCode &&
       email &&
@@ -84,23 +104,34 @@ function Category() {
       date &&
       income &&
       occupation &&
-      selectedCountry &&
+      selectedState &&
+      selectedCity &&
       selectedDisability &&
+      selectedAge &&
+      selectedGender &&
+      ethnicity &&
+      citizenshipStatus &&
       selectedStatus
     ) {
       formData = {
         ...formData,
-        full_name: name,
+        first_name: firstName,
+        last_name: lastName,
         home_address: homeAddress,
         zip_code: zipCode,
+        age: selectedAge,
+        gender: selectedGender,
         phone_number: phone,
-        country: selectedCountry,
+        state: selectedState,
+        city: selectedCity,
         monthly_income: income,
         date_of_birth: date,
         marital_status: selectedStatus,
         email: email,
         disability: selectedDisability,
         occupation: occupation,
+        ethnicity: ethnicity,
+        citizenshipStatus: citizenshipStatus,
         category: id,
       };
       toast.success("Form Submitted Successfully");
@@ -109,17 +140,24 @@ function Category() {
       toast.error("Please Fill All Fields");
     }
 
-    setName(" ");
+    setFirstName(" ");
+    setLastName(" ");
     setZipCode(" ");
     setHomeAddress(" ");
-    setSelectedCountry(" ");
+    setSelectedState(" ");
+    setSelectedCity(" ");
+    setSelectedAge(" ");
+    setSelectedGender(" ");
     setPhone(" ");
     setDate(" ");
     setEmail(" ");
     setOccupation(" ");
     setIncome(" ");
+    setEthnicity(" ");
+    setCitizenshipStatus(" ");
     setSelectedStatus(" ");
     setSelectedDisability(" ");
+    navigate("/");
   };
 
   return (
@@ -132,10 +170,26 @@ function Category() {
               <h1 className="font-bold text-[30px] text-center lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-[#232536] capitalize  ">
                 {type} Lottery
               </h1>
-              <p className="text-[#6D6E76] lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore.
-              </p>
+              {type === "personal" && (
+                <p className="text-[#6D6E76] lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                  {data.personal}
+                </p>
+              )}
+              {type === "business" && (
+                <p className="text-[#6D6E76] lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                  {data.business}
+                </p>
+              )}{" "}
+              {type === "education" && (
+                <p className="text-[#6D6E76] lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                  {data.education}
+                </p>
+              )}{" "}
+              {type === "real estate" && (
+                <p className="text-[#6D6E76] lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                  {data.housing}
+                </p>
+              )}
               <p className="text-[#232536] lg:w-[515px] uppercase text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                 Apply {">"} {type} Lottery
               </p>
@@ -174,9 +228,9 @@ function Category() {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  placeholder="Full Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  placeholder="First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
 
@@ -199,13 +253,38 @@ function Category() {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  placeholder="Home Address"
+                  placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group mb-4">
+                <input
+                  required
+                  type="text"
+                  className="form-control
+        block
+        w-full
+        px-3
+        py-4
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  placeholder="Street Address"
                   value={homeAddress}
                   onChange={(e) => setHomeAddress(e.target.value)}
                 />
               </div>
 
-              <div className="form-group mb-4 flex flex-col lg:flex-row gap-4 w-full ">
+              <div className="form-group mb-4">
                 <input
                   required
                   type="number"
@@ -229,10 +308,35 @@ function Category() {
                   value={zipCode}
                   onChange={(e) => setZipCode(e.target.value)}
                 />
+              </div>
+
+              <div className="form-group mb-4 flex flex-col lg:flex-row gap-4 w-full ">
+                <input
+                  required
+                  type="text"
+                  className="form-control
+        block
+        w-full
+        px-3
+        py-4
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  placeholder="City"
+                  value={selectedCity}
+                  onChange={(e) => setSelectedCity(e.target.value)}
+                />
 
                 <FormControl sx={{ width: "100%" }}>
                   <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
-                    Select Country
+                    Select State
                   </InputLabel>
                   <Select
                     required
@@ -245,18 +349,17 @@ function Category() {
                        bg-white bg-clip-padding
                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                        rounded
-                    
                        m-0
                      "
-                    value={selectedCountry}
+                    value={selectedState}
                     onChange={(e) => {
-                      selectedCountryHandler(e.target.value);
+                      selectedStateHandler(e.target.value);
                     }}
-                    label="Query Related"
+                    label="Select State"
                   >
-                    {!!countryArr?.length &&
-                      countryArr.map(({ label, value }) => (
-                        <MenuItem key={value} value={value}>
+                    {stateArr?.length &&
+                      stateArr.map(({ label, value }) => (
+                        <MenuItem key={value} value={label}>
                           {label}
                         </MenuItem>
                       ))}
@@ -308,6 +411,188 @@ function Category() {
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
                 />
+              </div>
+
+              <div className="form-group mb-4 flex flex-col lg:flex-row gap-4 w-full ">
+                <FormControl sx={{ width: "100%" }}>
+                  <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
+                    Gender
+                  </InputLabel>
+                  <Select
+                    required
+                    className=" 
+                       w-full
+                       font-normal
+                       transition
+                       ease-in-out
+                       text-gray-700
+                       bg-white bg-clip-padding
+                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                       rounded
+                    
+                       m-0
+                     "
+                    value={selectedGender}
+                    onChange={(e) => {
+                      setSelectedGender(e.target.value);
+                    }}
+                    label="Gender"
+                  >
+                    <MenuItem value={"male"}>
+                      <em>Male</em>
+                    </MenuItem>
+                    <MenuItem value={"female"}>
+                      <em>Female</em>
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+                <FormControl sx={{ width: "100%" }}>
+                  <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
+                    What is your age?
+                  </InputLabel>
+                  <Select
+                    required
+                    className=" 
+                       w-full
+                       font-normal
+                       transition
+                       ease-in-out
+                       text-gray-700
+                       bg-white bg-clip-padding
+                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                       rounded
+                    
+                       m-0
+                     "
+                    value={selectedAge}
+                    onChange={(e) => {
+                      setSelectedAge(e.target.value);
+                    }}
+                    label="What is your age?"
+                  >
+                    <MenuItem value={"18-25"}>
+                      <em>18-25</em>
+                    </MenuItem>
+                    <MenuItem value={"26-34"}>
+                      <em>26-34</em>
+                    </MenuItem>
+                    <MenuItem value={"35-49"}>
+                      <em>35-49</em>
+                    </MenuItem>
+                    <MenuItem value={"50-65"}>
+                      <em>50-65</em>
+                    </MenuItem>
+                    <MenuItem value={"65-80"}>
+                      <em>65-80</em>
+                    </MenuItem>
+                    <MenuItem value={"80+"}>
+                      <em>80 +</em>
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
+
+              <div className="form-group mb-4 flex flex-col lg:flex-row gap-4 w-full ">
+                <FormControl sx={{ width: "100%" }}>
+                  <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
+                    Citizenship Status
+                  </InputLabel>
+                  <Select
+                    required
+                    className=" 
+                       w-full
+                       font-normal
+                       transition
+                       ease-in-out
+                       text-gray-700
+                       bg-white bg-clip-padding
+                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                       rounded
+                    
+                       m-0
+                     "
+                    value={citizenshipStatus}
+                    onChange={(e) => {
+                      setCitizenshipStatus(e.target.value);
+                    }}
+                    label="Citizenship Status"
+                  >
+                    <MenuItem value={"U.S. Resident"}>
+                      <em>U.S. Resident</em>
+                    </MenuItem>
+                    <MenuItem value={"Resident Alien"}>
+                      <em>Resident Alien</em>
+                    </MenuItem>
+                    <MenuItem value={"Green Card Holder"}>
+                      <em>Green Card Holder</em>
+                    </MenuItem>
+                    <MenuItem value={"Permanent Resident"}>
+                      <em>Permanent Resident</em>
+                    </MenuItem>
+                    <MenuItem value={"Not sure"}>
+                      <em>Not Sure</em>
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+                <FormControl sx={{ width: "100%" }}>
+                  <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
+                    Ethnicity
+                  </InputLabel>
+                  <Select
+                    required
+                    className=" 
+                       w-full
+                       font-normal
+                       transition
+                       ease-in-out
+                       text-gray-700
+                       bg-white bg-clip-padding
+                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                       rounded
+                    
+                       m-0
+                     "
+                    value={ethnicity}
+                    onChange={(e) => {
+                      setEthnicity(e.target.value);
+                    }}
+                    label="Ethnicity"
+                  >
+                    <MenuItem value={"Asian American"}>
+                      <em>Asian American</em>
+                    </MenuItem>
+                    <MenuItem value={"Black Or African American"}>
+                      <em>Black Or African American</em>
+                    </MenuItem>
+                    <MenuItem value={"Hispanic"}>
+                      <em>Hispanic</em>
+                    </MenuItem>
+                    <MenuItem value={"Latino"}>
+                      <em>Latino</em>
+                    </MenuItem>
+                    <MenuItem value={"Middle Eastern American"}>
+                      <em>Middle Eastern American</em>
+                    </MenuItem>
+                    <MenuItem value={"Multi-racial"}>
+                      <em>Multi-racial</em>
+                    </MenuItem>
+                    <MenuItem value={"Native American"}>
+                      <em>Native American</em>
+                    </MenuItem>
+                    <MenuItem value={"Native Hawaiian"}>
+                      <em>Native Hawaiian</em>
+                    </MenuItem>
+                    <MenuItem value={"Other"}>
+                      <em>Other</em>
+                    </MenuItem>
+                    <MenuItem value={"Pacific Islander"}>
+                      <em>Pacific Islander</em>
+                    </MenuItem>
+                    <MenuItem value={"White"}>
+                      <em>White</em>
+                    </MenuItem>
+                  </Select>
+                </FormControl>
               </div>
 
               <div className="form-group mb-4 flex flex-col lg:flex-row gap-4 w-full ">
@@ -592,9 +877,9 @@ function Category() {
               </a>
 
               <a
-                href="/category/technology"
+                href="/category/personal"
                 className={`flex flex-row lg:items-start py-[14px] px-[20px] lg:gap-4 gap-2 md:gap-4 border border-solid ${
-                  algorithm === "technology" && "bg-[#50C0FF]"
+                  algorithm === "personal" && "bg-[#50C0FF]"
                 } hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
               >
                 <div
@@ -609,7 +894,7 @@ function Category() {
                   />
                 </div>
                 <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
-                  Technology Lottery
+                  Personal Lottery
                 </h2>
               </a>
             </div>

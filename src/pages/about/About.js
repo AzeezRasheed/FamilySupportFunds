@@ -11,22 +11,26 @@ function About() {
       <Navbar />
       <section className="flex flex-col lg:p-10 md:p-10 p-2 justify-center m-auto mt-8">
         <div className="z-40 flex">
-          <div className="items-center m-auto max-w-[1133px] h-[300px]  lg:h-[356px] md:h-[356px] lg:-mb-20 md:-mb-20  w-full flex flex-col lg:flex-row md:flex-row gap-4 lg:gap-0 md:gap-0  ">
-            <div className="lg:w-[50%] md:w-[50%] flex flex-col gap-4 lg:h-[356px] lg:p-10 md:p-8 bg-white ">
+          <div className="items-center  m-auto max-w-[1133px] h-full lg:h-[356px] md:h-[356px] lg:-mb-20 md:-mb-20  w-full flex flex-col lg:flex-row md:flex-row gap-4 lg:gap-0 md:gap-0  ">
+            <div className="lg:w-[50%] md:w-[50%] flex flex-col gap-4 lg:h-[356px] lg:p-10 md:p-8 md:pt-0 bg-white ">
               <h2 className=" text-[16px] leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
                 About us
               </h2>
 
-              <h1 className="font-bold text-[30px] text-start lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-[#232536]  ">
-                We are a team of content writers who share their learnings
+              <h1 className="font-bold text-[26px] text-start lg:text-[40px] md:text-[35px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-[#232536]  ">
+                We are a community of people who aim to give live changing
+                opportunities
               </h1>
             </div>
-            <div className="lg:w-[50%] md:w-[50%] mb-28 ">
+            <div className="lg:w-[50%] md:w-[50%] lg:mb-28 md:mb-28 mb-10 md:pt-10">
               <p className="text-[#6D6E76] font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip.
+                The Sustentation Lottery Grants is a comprehensive, free online
+                tool that connects U.S. citizens with benefits they may qualify
+                for. These programs include but are not limited to Information,
+                Education, and access to Special Programs, Services, and
+                Discounts, etc., FESSA strives to help our visitors better
+                manage their personal finances along with guiding them to
+                special Federal, State, and Private Benefit Programs.
               </p>
             </div>
           </div>
@@ -47,11 +51,14 @@ function About() {
                     Creating valuable content for creatives all around the world
                   </h1>
                   <p className="text-[#6D6E76] font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Non blandit massa enim nec. Scelerisque viverra
-                    mauris in aliquam sem. At risus viverra adipiscing at in
-                    tellus.
+                    To keep U.S citizen success central while providing the
+                    highest level of service, and equal opportunity in the
+                    awarding of funds at all citizens. Creating valuable life
+                    for people all around the world, we increase opportunities
+                    for access and affordability by providing accurate financial
+                    information, and individualized guidance and support for
+                    people in an environment which embraces teamwork and
+                    collaborative partnership.
                   </p>
                 </div>
 
@@ -64,11 +71,13 @@ function About() {
                     A platform that empowers individuals to improve
                   </h1>
                   <p className="text-[#6D6E76] font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Non blandit massa enim nec. Scelerisque viverra
-                    mauris in aliquam sem. At risus viverra adipiscing at in
-                    tellus.
+                    The Sustentation Lottery Grants services will be a leader in
+                    the nation by providing a faster, friendlier, and easier
+                    financial aid experience and a platform that empowers
+                    individuals to improve. We seek to create a culture of care
+                    and to deliver resources that allow all citizens the
+                    opportunity through an on-going commitment to our values:
+                    innovation, transparency, dignity, and diversity.
                   </p>
                 </div>
               </div>
@@ -134,7 +143,7 @@ function About() {
             </div>
           </div>
         </div>
-        <TeamMembers/>
+        <TeamMembers />
       </section>
       <Footer />
     </div>

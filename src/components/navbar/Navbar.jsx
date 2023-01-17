@@ -9,7 +9,7 @@ function Navbar() {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="/">
               <span className="text-[20px] leading-[20px] font-bold flex items-center text-white  ">
-                {"{"}LotteryLife
+                {"{"}SustentationLottery
               </span>
             </a>
 
