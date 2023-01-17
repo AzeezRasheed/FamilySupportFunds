@@ -6,7 +6,7 @@ function Navbar() {
     <header className="top-0 z-30 w-full py-0 px-4 lg:py-4 md:py-2  bg-[#232536]  shadow-xl">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 pb-4 md:pb-0 lg:pb-0 ">
         <div>
-          <div className="flex items-center justify-between py-0 md:py-5 md:block">
+          <div className="flex items-center justify-between py-0 pt-2 md:py-5 md:block">
             <a href="/">
               <span className="text-[20px] leading-[20px] font-bold flex items-center text-white  ">
                 {"{"}SustentationLottery
