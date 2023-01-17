@@ -5,12 +5,12 @@ function Hero() {
   return (
     <div className="bg-hero  w-full bg-cover bg-center ">
       <div className=" hero-overlay w-full h-full flex md:h-[600px] lg:h-[720px]  ">
-        <div className="flex flex-col text-center lg:text-start md:text-start justify-center lg:justify-start md:justify-center lg:pt-[180px] md:pt-[140px] lg:pl-[80px] md:pl-[50px] h-[381px] gap-4 lg:gap-[8] items-center md:items-start lg:items-start ">
+        <div className="flex flex-col text-center lg:text-start md:text-start justify-center lg:justify-start md:justify-center lg:pt-[180px] md:pt-[140px] lg:pl-[80px] md:pl-[50px] h-[381px] gap-2 pt-4 lg:gap-[8] items-center md:items-start lg:items-start ">
           <h2 className="leading-[20px] text-[16px] font-semibold text-white uppercase   ">
             Better living through lottery
           </h2>
 
-          <div className="flex flex-col gap-10 mb-6 ">
+          <div className="flex flex-col gap-6 md:gap-8 lg:gap-10 mb-3 lg:mb-6  md:mb-6">
             <h1 className="font-bold leading-64px text-white text-[24px] lg:text-[45px] md:text-[40px] lg:w-[903px] md:w-[603px] ">
               THE SUSTENTATION LOTTERY GRANTS
             </h1>
