@@ -8,13 +8,14 @@ import Select from "@mui/material/Select";
 import FIcon from "../../assets/FIcon.png";
 import SIcon from "../../assets/SIcon.png";
 import TIcon from "../../assets/TIcon.png";
+import { useRef } from "react";
 import FthIcon from "../../assets/FthIcon.png";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import dataForCategory from "./dataForCategory";
 import { Country, State, City } from "country-state-city";
-
+import emailjs from "emailjs-com";
 function Category() {
   // const states = csc.getStatesOfCountry(country.isoCode);
   // states.forEach((state) => {
@@ -31,7 +32,7 @@ function Category() {
   // });
 
   // const country = Country.getCountryByCode(countryCode);
-  const navigate = useNavigate();
+  const form = useRef();
   const data = dataForCategory;
   const countryCode = "US";
   const stateArr = State.getStatesOfCountry(countryCode).map((state) => ({
@@ -140,6 +141,22 @@ function Category() {
       toast.error("Please Fill All Fields");
     }
 
+    emailjs
+      .sendForm(
+        "service_p102o41",
+        "template_63aks7n",
+        form.current,
+        "Zi06-R-MsyzuIaHca"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
     setFirstName(" ");
     setLastName(" ");
     setZipCode(" ");
@@ -156,8 +173,9 @@ function Category() {
     setEthnicity(" ");
     setCitizenshipStatus(" ");
     setSelectedStatus(" ");
-    setSelectedDisability(" ");
-    navigate("/");
+    setSelectedDisability(" ");
+
+    e.target.reset();
   };
 
   return (
@@ -208,6 +226,7 @@ function Category() {
             <form
               className="lg:w-[500px] pb-6 lg:pl-6 pl-0 pr-0 "
               onSubmit={handleFormSubmit}
+              ref={form}
             >
               <div className="form-group mb-4">
                 <input
@@ -231,6 +250,7 @@ function Category() {
                   placeholder="First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
+                  name="firstName"
                 />
               </div>
 
@@ -256,6 +276,7 @@ function Category() {
                   placeholder="Last Name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
+                  name="lastName"
                 />
               </div>
 
@@ -281,6 +302,7 @@ function Category() {
                   placeholder="Street Address"
                   value={homeAddress}
                   onChange={(e) => setHomeAddress(e.target.value)}
+                  name="homeAddress"
                 />
               </div>
 
@@ -307,6 +329,7 @@ function Category() {
                   placeholder="Zip Code"
                   value={zipCode}
                   onChange={(e) => setZipCode(e.target.value)}
+                  name="zipCode"
                 />
               </div>
 
@@ -332,6 +355,7 @@ function Category() {
                   placeholder="City"
                   value={selectedCity}
                   onChange={(e) => setSelectedCity(e.target.value)}
+                  name="city"
                 />
 
                 <FormControl sx={{ width: "100%" }}>
@@ -352,6 +376,7 @@ function Category() {
                        m-0
                      "
                     value={selectedState}
+                    name="state"
                     onChange={(e) => {
                       selectedStateHandler(e.target.value);
                     }}
@@ -390,6 +415,7 @@ function Category() {
                   placeholder="Phone Number"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
+                  name="phoneNumber"
                 />
                 <input
                   type="date"
@@ -410,6 +436,7 @@ function Category() {
                   placeholder="Select a date"
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
+                  name="date"
                 />
               </div>
 
@@ -437,6 +464,7 @@ function Category() {
                       setSelectedGender(e.target.value);
                     }}
                     label="Gender"
+                    name="gender"
                   >
                     <MenuItem value={"male"}>
                       <em>Male</em>
@@ -469,6 +497,7 @@ function Category() {
                       setSelectedAge(e.target.value);
                     }}
                     label="What is your age?"
+                    name="age"
                   >
                     <MenuItem value={"18-25"}>
                       <em>18-25</em>
@@ -516,6 +545,7 @@ function Category() {
                       setCitizenshipStatus(e.target.value);
                     }}
                     label="Citizenship Status"
+                    name="citizenshipStatus"
                   >
                     <MenuItem value={"U.S. Resident"}>
                       <em>U.S. Resident</em>
@@ -557,6 +587,7 @@ function Category() {
                       setEthnicity(e.target.value);
                     }}
                     label="Ethnicity"
+                    name="ethnicity"
                   >
                     <MenuItem value={"Asian American"}>
                       <em>Asian American</em>
@@ -617,6 +648,7 @@ function Category() {
                   placeholder="Your Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  name="email"
                 />
                 <input
                   type="text"
@@ -639,6 +671,7 @@ function Category() {
                   onChange={(e) => {
                     setOccupation(e.target.value);
                   }}
+                  name="occupation"
                 />
               </div>
 
@@ -662,10 +695,10 @@ function Category() {
                   ease-in-out
                   m-0
                   focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  id="exampleInputEmail2"
                   placeholder="Monthly Income"
                   value={income}
                   onChange={(e) => setIncome(e.target.value)}
+                  name="monthlyIncome"
                 />
                 <div
                   className="flex flex-col gap-2 
@@ -687,6 +720,7 @@ function Category() {
                             onChange={() => {
                               setSelectedStatus("single");
                             }}
+                            name="maritalStatus"
                           />
                           <span className="ml-2">Single</span>
                         </label>
@@ -702,6 +736,7 @@ function Category() {
                             onChange={() => {
                               setSelectedStatus("married");
                             }}
+                            name="maritalStatus"
                           />
                           <span className="ml-2">Married</span>
                         </label>
@@ -718,6 +753,7 @@ function Category() {
                             onChange={() => {
                               setSelectedStatus("divorced");
                             }}
+                            name="maritalStatus"
                           />
                           <span class="ml-2">Divorced</span>
                         </label>
@@ -733,6 +769,7 @@ function Category() {
                             onChange={() => {
                               setSelectedStatus("widowed");
                             }}
+                            name="maritalStatus"
                           />
                           <span className="ml-2">Widowed</span>
                         </label>
@@ -765,6 +802,7 @@ function Category() {
                       setSelectedDisability(e.target.value);
                     }}
                     label="Disability"
+                    name="disability"
                   >
                     <MenuItem value={"none"}>
                       <em>None</em>
