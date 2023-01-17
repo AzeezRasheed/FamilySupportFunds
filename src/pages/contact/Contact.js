@@ -5,7 +5,35 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { useRef } from "react";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_p102o41",
+        "template_4idm26d",
+        form.current,
+        "Zi06-R-MsyzuIaHca"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+      toast.success("Message Sent Successfully");
+    e.target.reset();
+  };
+
   const [algorithm, setAlgorithm] = React.useState("");
 
   const handleChange = (event) => {
@@ -73,12 +101,12 @@ function Contact() {
           </div>
         </div>
 
-        <div class="block p-6 pl-0 pr-0 ">
-          <form>
-            <div class="form-group mb-6">
+        <div className="block p-6 pl-0 pr-0 ">
+          <form ref={form} onSubmit={sendEmail}>
+            <div className="form-group mb-6">
               <input
                 type="text"
-                class="form-control
+                className="form-control
         block
         w-full
         px-3
@@ -93,49 +121,39 @@ function Contact() {
         ease-in-out
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                id="exampleInputEmail2"
-                placeholder="Full Name"
+                name="firstName"
+                required
+                placeholder="Your First Name"
               />
             </div>
 
-            <div class="form-group mb-6">
-              <FormControl sx={{ width: "100%" }}>
-                <InputLabel
-                  id="demo-simple-select-label"
-                  className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 "
-                >
-                  Query Related
-                </InputLabel>
-                <Select
-                  className=" 
-                       w-full
-                     
-                  
-                       font-normal
-                       transition
-                       ease-in-out
-                       text-gray-700
-                       bg-white bg-clip-padding
-                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                       rounded
-                    
-                       m-0
-                     "
-                  value={algorithm}
-                  label="Query Related"
-                  onChange={handleChange}
-                >
-                  <MenuItem value={1}>Stack</MenuItem>
-                  <MenuItem value={2}>Queue</MenuItem>
-                  <MenuItem value={3}>Array</MenuItem>
-                </Select>
-              </FormControl>
+            <div className="form-group mb-6">
+              <input
+                type="text"
+                className="form-control
+        block
+        w-full
+        px-3
+        py-4
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                name="lastName"
+                required
+                placeholder="Your Last Name"
+              />
             </div>
-
-            <div class="form-group mb-6">
+            <div className="form-group mb-6">
               <input
                 type="email"
-                class="form-control block
+                className="form-control block
         w-full
         px-3
         py-4
@@ -150,11 +168,13 @@ function Contact() {
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 placeholder="Your Email"
+                name="email"
+                required
               />
             </div>
-            <div class="flex justify-between items-center mb-6">
+            <div className="flex justify-between items-center mb-6">
               <textarea
-                class="
+                className="
         form-control
         block
         w-full
@@ -171,14 +191,14 @@ function Contact() {
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
       "
-                id="exampleFormControlTextarea13"
-                rows="3"
-                placeholder="Message"
+                name="message"
+                rows="7"
+                placeholder="Your Message"
               ></textarea>
             </div>
             <button
               type="submit"
-              class="
+              className="
       w-full
       px-6
       py-4
