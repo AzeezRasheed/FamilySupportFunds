@@ -16,6 +16,11 @@ import "react-toastify/dist/ReactToastify.css";
 import dataForCategory from "./dataForCategory";
 import { Country, State, City } from "country-state-city";
 import emailjs from "emailjs-com";
+import {
+  BsFillArrowDownCircleFill,
+  BsFillArrowUpCircleFill,
+} from "react-icons/bs";
+
 function Category() {
   // const states = csc.getStatesOfCountry(country.isoCode);
   // states.forEach((state) => {
@@ -32,6 +37,11 @@ function Category() {
   // });
 
   // const country = Country.getCountryByCode(countryCode);
+  const [businessActive, setBusinessActive] = useState(false);
+  const [educationActive, setEducationActive] = useState(false);
+  const [realEstateActive, setRealEstateActive] = useState(false);
+  const [personalActive, setPersonalActive] = useState(false);
+
   const form = useRef();
   const data = dataForCategory;
   const countryCode = "US";
@@ -135,47 +145,47 @@ function Category() {
         citizenshipStatus: citizenshipStatus,
         category: id,
       };
-      toast.success("Form Submitted Successfully");
+
+      emailjs
+        .sendForm(
+          "service_p102o41",
+          "template_63aks7n",
+          form.current,
+          "Zi06-R-MsyzuIaHca"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            toast.success("Form Submitted Successfully");
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+
+      setFirstName(" ");
+      setLastName(" ");
+      setZipCode(" ");
+      setHomeAddress(" ");
+      setSelectedState(" ");
+      setSelectedCity(" ");
+      setSelectedAge(" ");
+      setSelectedGender(" ");
+      setPhone(" ");
+      setDate(" ");
+      setEmail(" ");
+      setOccupation(" ");
+      setIncome(" ");
+      setEthnicity(" ");
+      setCitizenshipStatus(" ");
+      setSelectedStatus(" ");
+      setSelectedDisability(" ");
+
+      e.target.reset();
       console.log(formData);
     } else {
       toast.error("Please Fill All Fields");
     }
-
-    emailjs
-      .sendForm(
-        "service_p102o41",
-        "template_63aks7n",
-        form.current,
-        "Zi06-R-MsyzuIaHca"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-
-    setFirstName(" ");
-    setLastName(" ");
-    setZipCode(" ");
-    setHomeAddress(" ");
-    setSelectedState(" ");
-    setSelectedCity(" ");
-    setSelectedAge(" ");
-    setSelectedGender(" ");
-    setPhone(" ");
-    setDate(" ");
-    setEmail(" ");
-    setOccupation(" ");
-    setIncome(" ");
-    setEthnicity(" ");
-    setCitizenshipStatus(" ");
-    setSelectedStatus(" ");
-    setSelectedDisability(" ");
-
-    e.target.reset();
   };
 
   return (
@@ -228,6 +238,7 @@ function Category() {
               onSubmit={handleFormSubmit}
               ref={form}
             >
+              
               <div className="form-group mb-4">
                 <input
                   required
@@ -676,30 +687,46 @@ function Category() {
               </div>
 
               <div className="form-group mb-4 flex flex-col lg:flex-row gap-4 w-full ">
-                <input
-                  type="number"
-                  required
-                  className="form-control
-                  block
-                  w-full
-                  h-[60px]
-                  px-3
-                  py-4
-                  text-base
-                  font-normal
-                  text-gray-700
-                  bg-white bg-clip-padding
-                  border border-solid border-gray-300
-                  rounded
-                  transition
-                  ease-in-out
-                  m-0
-                  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  placeholder="Monthly Income"
-                  value={income}
-                  onChange={(e) => setIncome(e.target.value)}
-                  name="monthlyIncome"
-                />
+                <FormControl sx={{ width: "100%" }}>
+                  <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
+                    Monthly Income
+                  </InputLabel>
+                  <Select
+                    required
+                    className=" 
+                       w-full
+                       font-normal
+                       transition
+                       ease-in-out
+                       text-gray-700
+                       bg-white bg-clip-padding
+                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                       rounded
+                       m-0
+                     "
+                    value={income}
+                    onChange={(e) => setIncome(e.target.value)}
+                    name="monthlyIncome"
+                    label="Monthly Income"
+                  >
+                    <MenuItem value={"$100 - $1,000"}>
+                      <em>$100 - $1,000</em>
+                    </MenuItem>
+                    <MenuItem value={"$1,000 - $5,000"}>
+                      <em>$1,000 - $5,000</em>
+                    </MenuItem>
+                    <MenuItem value={"$5,000 - $20,000"}>
+                      <em>$5,000 - $20,000</em>
+                    </MenuItem>
+                    <MenuItem value={"$20,000 - $50,000"}>
+                      <em>$20,000 - $50,000</em>
+                    </MenuItem>
+                    <MenuItem value={"$100,000 or More…"}>
+                      <em>$100,000 or More…</em>
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+
                 <div
                   className="flex flex-col gap-2 
                  w-full
@@ -848,93 +875,295 @@ function Category() {
             </h2>
 
             <div className="flex flex-col gap-4">
-              <a
-                href="/category/business"
-                className={`flex flex-row lg:items-start py-[14px] px-[20px] lg:gap-4 gap-2 md:gap-4 border border-solid ${
-                  algorithm === "business" && "bg-[#50C0FF]"
-                } hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
-              >
-                <div
-                  className={`w-[48px] h-[48px] ${
-                    isActive ? "bg-transparent" : "bg-[#FBF6EA]"
-                  }  flex rounded `}
+              <div className="ttt flex flex-row w-full justify-between gap-2  ">
+                <a
+                  href="/category/business"
+                  className={` lg:items-start w-full py-[14px] px-[20px] border border-solid ${
+                    algorithm === "business" && "bg-[#50C0FF]"
+                  } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
                 >
-                  <img
-                    src={FIcon}
-                    alt="FIcon"
-                    className="w-[48px] h-[48px] align-middle m-auto flex  "
-                  />
+                  <div className="flex flex-col gap-2 mt-2 ">
+                    <div className="flex">
+                      <div className="text-white font-bold">
+                        <div className=" flex flex-row lg:gap-4 gap-2 md:gap-4 ">
+                          <div
+                            className={`w-[48px] h-[48px] ${
+                              isActive ? "bg-transparent" : "bg-[#FBF6EA]"
+                            }  flex rounded `}
+                          >
+                            <img
+                              src={FIcon}
+                              alt="FIcon"
+                              className="w-[48px] h-[48px] align-middle m-auto flex  "
+                            />
+                          </div>
+                          <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
+                            Business Lottery
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {businessActive && (
+                    <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                      <ul className="flex flex-col list-disc pl-4 gap-2">
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Small Business Funding / Management
+                        </li>
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Start-up / Expansion Business Capital
+                          </li>
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Home Business Assistance
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Women-Owned Business Funding
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Small Business Loans
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Minority-Owned Business Funding
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Private Money / Venture Capital
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </a>
+                <div
+                  className="flex pt-8  "
+                  onClick={() => setBusinessActive(!businessActive)}
+                >
+                  {businessActive ? (
+                    <BsFillArrowUpCircleFill className="w-8 h-8" />
+                  ) : (
+                    <BsFillArrowDownCircleFill className="w-8 h-8" />
+                  )}
                 </div>
-                <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
-                  Business Lottery
-                </h2>
-              </a>
+              </div>
 
-              <a
-                href="/category/education"
-                className={`flex flex-row lg:items-start py-[14px] px-[20px] lg:gap-4 gap-2 md:gap-4 border border-solid ${
-                  algorithm === "education" && "bg-[#50C0FF]"
-                } hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
-              >
-                <div
-                  className={`w-[48px] h-[48px] ${
-                    isActive ? "bg-transparent" : "bg-[#FBF6EA]"
-                  }  flex rounded `}
+              <div className="ttt flex flex-row w-full justify-between gap-2  ">
+                <a
+                  href="/category/education"
+                  className={` lg:items-start w-full py-[14px] px-[20px] border border-solid ${
+                    algorithm === "education" && "bg-[#50C0FF]"
+                  } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
                 >
-                  <img
-                    src={SIcon}
-                    alt="SIcon"
-                    className="w-[23px] h-[23px] align-middle m-auto flex  "
-                  />
+                  <div className="flex flex-col gap-2 mt-2 ">
+                    <div className="flex">
+                      <div className="text-white font-bold">
+                        <div className=" flex flex-row lg:gap-4 gap-2 md:gap-4 ">
+                          <div
+                            className={`w-[48px] h-[48px] ${
+                              isActive ? "bg-transparent" : "bg-[#FBF6EA]"
+                            }  flex rounded `}
+                          >
+                            <img
+                              src={SIcon}
+                              alt="SIcon"
+                              className="w-[23px] h-[23px] align-middle m-auto flex  "
+                            />
+                          </div>
+                          <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
+                            Education Lottery
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {educationActive && (
+                    <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                      <ul className="flex flex-col list-disc pl-4 gap-2">
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Federal Pell Lottery
+                        </li>
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Scholarships
+                          </li>
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Student Financial Aid
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Training Lottery
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Tuition Assistance
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Lottery For Research
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Stafford Loans
+                        </li>
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Lottery for Universities
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </a>
+                <div
+                  className="flex pt-8  "
+                  onClick={() => setEducationActive(!educationActive)}
+                >
+                  {educationActive ? (
+                    <BsFillArrowUpCircleFill className="w-8 h-8" />
+                  ) : (
+                    <BsFillArrowDownCircleFill className="w-8 h-8" />
+                  )}
                 </div>
-                <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
-                  Education Lottery
-                </h2>
-              </a>
+              </div>
 
-              <a
-                href="/category/real-estate"
-                className={`flex flex-row lg:items-start py-[14px] px-[20px] lg:gap-4 gap-2 md:gap-4 border border-solid ${
-                  algorithm === "real-estate" && "bg-[#50C0FF]"
-                } hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
-              >
-                <div
-                  className={`w-[48px] h-[48px] ${
-                    isActive ? "bg-transparent" : "bg-[#FBF6EA]"
-                  }  flex rounded `}
+              <div className="ttt flex flex-row w-full justify-between gap-2  ">
+                <a
+                  href="/category/real-estate"
+                  className={` lg:items-start w-full py-[14px] px-[20px] border border-solid ${
+                    algorithm === "real-estate" && "bg-[#50C0FF]"
+                  } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
                 >
-                  <img
-                    src={TIcon}
-                    alt="FthIcon"
-                    className="w-[48px] h-[48px] align-middle m-auto flex  "
-                  />
+                  <div className="flex flex-col gap-2 mt-2 ">
+                    <div className="flex">
+                      <div className="text-white font-bold">
+                        <div className=" flex flex-row lg:gap-4 gap-2 md:gap-4 ">
+                          <div
+                            className={`w-[48px] h-[48px] ${
+                              isActive ? "bg-transparent" : "bg-[#FBF6EA]"
+                            }  flex rounded `}
+                          >
+                            <img
+                              src={SIcon}
+                              alt="SIcon"
+                              className="w-[23px] h-[23px] align-middle m-auto flex  "
+                            />
+                          </div>
+                          <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
+                            Real Estate Lottery
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {realEstateActive && (
+                    <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                      <ul className="flex flex-col list-disc pl-4 gap-2">
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          1st Time Home Buyer
+                        </li>
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Mobile Homes / Parks
+                          </li>
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Rental Housing Projects
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Commerical Property
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Apartment Buildings
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Land Development
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          RV Parks
+                        </li>
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          New Construction
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </a>
+                <div
+                  className="flex pt-8  "
+                  onClick={() => setRealEstateActive(!realEstateActive)}
+                >
+                  {realEstateActive ? (
+                    <BsFillArrowUpCircleFill className="w-8 h-8" />
+                  ) : (
+                    <BsFillArrowDownCircleFill className="w-8 h-8" />
+                  )}
                 </div>
-                <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
-                  Real Estate Lottery
-                </h2>
-              </a>
+              </div>
 
-              <a
-                href="/category/personal"
-                className={`flex flex-row lg:items-start py-[14px] px-[20px] lg:gap-4 gap-2 md:gap-4 border border-solid ${
-                  algorithm === "personal" && "bg-[#50C0FF]"
-                } hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
-              >
-                <div
-                  className={`w-[48px] h-[48px] ${
-                    isActive ? "bg-transparent" : "bg-[#FBF6EA]"
-                  }  flex rounded `}
+              <div className="ttt flex flex-row w-full justify-between gap-2  ">
+                <a
+                  href="/category/personal"
+                  className={` lg:items-start w-full py-[14px] px-[20px] border border-solid ${
+                    algorithm === "personal" && "bg-[#50C0FF]"
+                  } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
                 >
-                  <img
-                    src={FthIcon}
-                    alt="FthIcon"
-                    className="w-[48px] h-[48px] align-middle m-auto flex  "
-                  />
+                  <div className="flex flex-col gap-2 mt-2 ">
+                    <div className="flex">
+                      <div className="text-white font-bold">
+                        <div className=" flex flex-row lg:gap-4 gap-2 md:gap-4 ">
+                          <div
+                            className={`w-[48px] h-[48px] ${
+                              isActive ? "bg-transparent" : "bg-[#FBF6EA]"
+                            }  flex rounded `}
+                          >
+                            <img
+                              src={SIcon}
+                              alt="SIcon"
+                              className="w-[23px] h-[23px] align-middle m-auto flex  "
+                            />
+                          </div>
+                          <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
+                            Personal Lottery
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {personalActive && (
+                    <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                      <ul className="flex flex-col list-disc pl-4 gap-2">
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Home Repair
+                        </li>
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Rent Assistance
+                          </li>
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Child Care
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Food and Nutrition
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Medical Bills Assistance
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Utility Bills Assistance
+                        </li>{" "}
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Education Assistance
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </a>
+                <div
+                  className="flex pt-8  "
+                  onClick={() => setPersonalActive(!personalActive)}
+                >
+                  {personalActive ? (
+                    <BsFillArrowUpCircleFill className="w-8 h-8" />
+                  ) : (
+                    <BsFillArrowDownCircleFill className="w-8 h-8" />
+                  )}
                 </div>
-                <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
-                  Personal Lottery
-                </h2>
-              </a>
+              </div>
             </div>
           </div>
         </div>
