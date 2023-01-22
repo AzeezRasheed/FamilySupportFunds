@@ -25,17 +25,16 @@ function Category() {
       <div className="flex flex-col gap-10">
         <div className="flex flex-col lg:p-10 md:p-10 p-2 justify-center m-auto mt-8 gap-8">
           <div className="flex flex-col">
-            <h2 className=" p-4 text-center lg:text-[36px] md:text-[30px] text-[24px] leading-[48px] font-bold capitalize text-[#232536] tracking-[1px] lg:tracking-[-2px] md:tracking-[-2px] #232536 ">
+            <h2 className=" p-4 font-sen text-center lg:text-[36px] md:text-[30px] text-[24px] leading-[48px] font-bold capitalize text-[#232536] tracking-[1px] lg:tracking-[-2px] md:tracking-[-2px] #232536 ">
               Choose A Catagory
             </h2>
           </div>
           <div className=" mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div
-                href="/category/business"
                 className={`flex  border border-solid hover:bg-blue-500 hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76] w-[296px]  items-start `}
               >
-                <div className="flex justify-between flex-col gap-[4rem] p-4">
+                <div className="flex flex-col justify-between gap-[1.5rem] p-4">
                   <div className="flex flex-col gap-3">
                     <div
                       className={`w-[48px] h-[48px] ${
@@ -48,10 +47,10 @@ function Category() {
                         className="w-[48px] h-[48px] align-middle m-auto flex  "
                       />
                     </div>
-                    <h2 className="text-[#232536] font-bold text-[28px] leading-[40px] tracking-[-1px] ">
+                    <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
                       Business Lottery
                     </h2>
-                    <ul className="flex flex-col list-disc pl-4 gap-2">
+                    <ul className="flex flex-col font-inter list-disc pl-4 gap-2">
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Small Business Funding / Management
                       </li>
@@ -77,8 +76,8 @@ function Category() {
                       </li>
                     </ul>
                   </div>
-                  <a href="/category/business" className="flex items-start">
-                    <button className="flex flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
+                  <a href="/category/education" className="flex items-start ">
+                    <button className="flex font-sen flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
                       <span className="text-[18px] font-bold flex items-center text-[#232536] leading-[24px]   ">
                         Apply Now
                       </span>
@@ -103,10 +102,10 @@ function Category() {
                         className="w-[23px] h-[23px] align-middle m-auto flex  "
                       />
                     </div>
-                    <h2 className="text-[#232536] font-bold text-[28px] leading-[40px] tracking-[-1px] ">
+                    <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
                       Education Lottery
                     </h2>
-                    <ul className="flex flex-col list-disc pl-4 gap-2">
+                    <ul className="flex flex-col font-inter list-disc pl-4 gap-2 pb-4">
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Federal Pell Lottery
                       </li>
@@ -136,7 +135,7 @@ function Category() {
                     </ul>
                   </div>
                   <a href="/category/education" className="flex items-start ">
-                    <button className="flex flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
+                    <button className="flex font-sen flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
                       <span className="text-[18px] font-bold flex items-center text-[#232536] leading-[24px]   ">
                         Apply Now
                       </span>
@@ -161,10 +160,10 @@ function Category() {
                         className="w-[48px] h-[48px] align-middle m-auto flex  "
                       />
                     </div>
-                    <h2 className="text-[#232536] font-bold text-[28px] leading-[40px] tracking-[-1px] ">
+                    <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
                       Real Estate Lottery
                     </h2>
-                    <ul className="flex flex-col list-disc pl-4 gap-2">
+                    <ul className="flex flex-col font-inter list-disc pl-4 gap-2 pb-4">
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         1st Time Home Buyer
                       </li>
@@ -194,7 +193,7 @@ function Category() {
                     </ul>
                   </div>
                   <a href="/category/real-estate" className="flex items-start ">
-                    <button className="flex flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
+                    <button className="flex font-sen flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
                       <span className="text-[18px] font-bold flex items-center text-[#232536] leading-[24px]   ">
                         Apply Now
                       </span>
@@ -219,10 +218,10 @@ function Category() {
                         className="w-[48px] h-[48px] align-middle m-auto flex  "
                       />
                     </div>
-                    <h2 className="text-[#232536] font-bold text-[28px] leading-[40px] tracking-[-1px] ">
+                    <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
                       Personal Assistance
                     </h2>
-                    <ul className="flex flex-col list-disc pl-4 gap-2">
+                    <ul className="flex flex-col font-inter list-disc pl-4 gap-2 pb-4">
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Home Repair
                       </li>
@@ -249,7 +248,7 @@ function Category() {
                     </ul>
                   </div>
                   <a href="/category/personal" className="flex items-start ">
-                    <button className="flex flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
+                    <button className="flex font-sen flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
                       <span className="text-[18px] font-bold flex items-center text-[#232536] leading-[24px]   ">
                         Apply Now
                       </span>
@@ -267,19 +266,19 @@ function Category() {
           </div>
           <div className=" w-full lg:w-[706px]   md:h-[548px] lg:h-[548px] bg-white   shadow-md lg:mt-[158px] lg:-ml-80  ">
             <div className="p-10 flex flex-col gap-3">
-              <h2 className=" text-[16px] leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
+              <h2 className=" text-[16px] font-inter leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
                 Why we started
               </h2>
 
-              <h1 className="font-bold text-[30px] text-start  leading-[40px] tracking-[-2px] text-[#232536] lg:w-[546px] ">
+              <h1 className="font-bold text-[30px] text-start font-sen  leading-[40px] tracking-[-2px] text-[#232536] lg:w-[546px] ">
                 It started out as a simple idea and evolved into our passion.
               </h1>
 
-              <p className="text-[#6D6E76] font-normal text-[12px]   leading-[28px] lg:w-[546px] "></p>
+              <p className="text-[#6D6E76] font-normal font-inter text-[12px]   leading-[28px] lg:w-[546px] "></p>
               {showMore ? text : `${shortenWord(text)}...`}
               <div>
-              <button
-                  className="flex flex-row items-start gap-[12px] bg-transparent rounded-sm   "
+                <button
+                  className="flex flex-row items-start font-sen gap-[12px] bg-transparent rounded-sm   "
                   onClick={() => setShowMore(!showMore)}
                 >
                   {showMore ? (
@@ -299,11 +298,11 @@ function Category() {
       </div>
 
       <div className="flex flex-col lg:flex-row md:flex-col text-center lg:text-start md:text-start lg:p-10 md:p-10 p-2 justify-center   m-auto mt-8 gap-5 lg:gap-10 items-center ">
-        <div className="flex flex-col gap-1  ">
-          <p className="font-normal text-[#6D6E76] leading-[20px] text-[14px]   ">
+        <div className="flex flex-col gap-1   ">
+          <p className="font-normal text-[#6D6E76] font-inter leading-[20px] text-[14px]   ">
             We are
           </p>
-          <h2 className=" leading-[32px] text-[#6D6E76] text-[24px] font-bold ">
+          <h2 className=" leading-[32px] font-sen text-[#6D6E76] text-[24px] font-bold ">
             Featured in
           </h2>
         </div>

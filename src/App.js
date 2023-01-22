@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import Policy from "./pages/policy/Policy";
 import "./index.css";
 import { ToastContainer } from "react-toastify";
+import WinnersList from "./pages/winnersList/WinnersList";
 function App() {
   return (
     <>
@@ -30,6 +31,7 @@ function App() {
         <Route path="/category" element={<Category />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/privacy-policy" element={<Policy />} />
+        <Route path="/winners-list" element={<WinnersList />} />
       </Routes>
     </>
   );

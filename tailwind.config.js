@@ -6,6 +6,11 @@ module.exports = {
       backgroundImage: {
         'hero': "url('./assets/HeroImage.png')",
       },
+      fontFamily: {
+        "inter":['Inter', "sans-serif"],
+        "sen":['Playfair Display', "serif"],
+        
+      }
     },
   },
   plugins: [],

@@ -29,18 +29,18 @@ function Aboutus() {
           <div className=" bg-[#F4F0F8]  w-full ">
             <div className="flex flex-col lg:flex-row md:flex-row lg:p-14 md:p-14 p-8  gap-10 lg:items-start md:items-start items-center ">
               <div className="flex flex-col gap-8 lg:w-[50%] md:w-[50%] text-start ">
-                <h2 className=" text-[16px] leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
+                <h2 className=" text-[16px] font-inter leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
                   About us
                 </h2>
-                <h1 className="font-bold text-[24px] text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
+                <h1 className="font-bold font-sen text-[24px] text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
                   We are a community of people who aim to give live changing
                   opportunities
                 </h1>
-                <p className="text-[#6D6E76] font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] ">
+                <p className="text-[#6D6E76] font-normal font-inter text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] ">
                   {showMore ? text : `${shortenWord(text)}...`}
                 </p>
                 <button
-                  className="flex flex-row items-start gap-[12px] bg-transparent rounded-sm   "
+                  className="flex flex-row font-sen items-start gap-[12px] bg-transparent rounded-sm   "
                   onClick={() => setShowMore(!showMore)}
                 >
                   {showMore ? (
@@ -56,14 +56,14 @@ function Aboutus() {
               </div>
 
               <div className="flex flex-col gap-8  lg:w-[50%] md:w-[50%] text-center lg:text-start md:text-start">
-                <h2 className=" text-[16px] leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
+                <h2 className=" text-[16px] font-inter leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
                   Our mision
                 </h2>
 
-                <h1 className="font-bold text-[24px] text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
+                <h1 className="font-bold font-sen text-[24px] text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
                   Creating valuable life for people all around the world
                 </h1>
-                <p className="text-[#6D6E76] font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] ">
+                <p className="text-[#6D6E76] font-inter font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] ">
                   To keep U.S citizen success central while providing the
                   highest level of service, and equal opportunity in the
                   awarding of funds at all citizens. Creating valuable life for

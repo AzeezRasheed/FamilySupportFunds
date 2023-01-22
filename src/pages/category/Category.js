@@ -37,10 +37,28 @@ function Category() {
   // });
 
   // const country = Country.getCountryByCode(countryCode);
+
+  const { id } = useParams();
+  const type = id.split("-").join(" ");
+  const [algorithm, setAlgorithm] = React.useState("");
+  const [isActive, setIsActive] = useState(false);
+
   const [businessActive, setBusinessActive] = useState(false);
   const [educationActive, setEducationActive] = useState(false);
   const [realEstateActive, setRealEstateActive] = useState(false);
   const [personalActive, setPersonalActive] = useState(false);
+
+  useEffect(() => {
+    if (id === "personal") {
+      setPersonalActive(true);
+    } else if (id === "business") {
+      setBusinessActive(true);
+    } else if (id === "education") {
+      setEducationActive(true);
+    } else if (id === "real-estate") {
+      setRealEstateActive(true);
+    }
+  }, [id]);
 
   const form = useRef();
   const data = dataForCategory;
@@ -72,10 +90,6 @@ function Category() {
   const selectedStateHandler = (value) => {
     setSelectedState(value);
   };
-  const { id } = useParams();
-  const type = id.split("-").join(" ");
-  const [algorithm, setAlgorithm] = React.useState("");
-  const [isActive, setIsActive] = useState(false);
 
   let formData = {
     first_name: "",
@@ -195,30 +209,30 @@ function Category() {
         <div className="flex flex-col items-center justify-center w-full m-auto  ">
           <div className=" bg-[#F4F0F8] h-[348px] w-full ">
             <div className="flex flex-col lg:p-14 md:p-14 p-14  gap-4  items-center ">
-              <h1 className="font-bold text-[30px] text-center lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-[#232536] capitalize  ">
+              <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-[#232536] capitalize  ">
                 {type} Lottery
               </h1>
               {type === "personal" && (
-                <p className="text-[#6D6E76] lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-[#6D6E76] font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.personal}
                 </p>
               )}
               {type === "business" && (
-                <p className="text-[#6D6E76] lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-[#6D6E76] font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.business}
                 </p>
               )}{" "}
               {type === "education" && (
-                <p className="text-[#6D6E76] lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-[#6D6E76] font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.education}
                 </p>
               )}{" "}
               {type === "real estate" && (
-                <p className="text-[#6D6E76] lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-[#6D6E76] font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.housing}
                 </p>
               )}
-              <p className="text-[#232536] lg:w-[515px] uppercase text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+              <p className="text-[#232536] font-inter lg:w-[515px] uppercase text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                 Apply {">"} {type} Lottery
               </p>
             </div>
@@ -227,9 +241,9 @@ function Category() {
       </div>
 
       <div>
-        <div className="flex  flex-col lg:p-10 md:p-10 p-2  mt-8 mb-14 lg:flex-row items-center md:flex-col lg:items-start gap-8 m-auto justify-center">
-          <div className=" flex flex-col gap-8 ">
-            <h2 className=" lg:text-[36px] text-[24px] pt-6 lg:w-[500px] lg:leading-[48px]  leading-[30px] md:text-[30px] md:leading-[30px] font-bold  text-[#232536]  tracking-[-2px] ">
+        <div className="flex flex-  flex-col-reverse lg:p-10 md:p-10 p-2  mt-8 mb-14 lg:flex-row items-center  lg:items-start gap-8 m-auto justify-center">
+          <div className=" flex flex-col gap-8 flex-2 ">
+            <h2 className=" lg:text-[36px] font-sen text-[24px] pt-6 lg:w-[500px] lg:leading-[48px]  leading-[30px] md:text-[30px] md:leading-[30px] font-bold  text-[#232536]  tracking-[-2px] ">
               Fill the form below to enter for a{" "}
               <span className="capitalize">{type}</span> Lottery
             </h2>
@@ -238,7 +252,6 @@ function Category() {
               onSubmit={handleFormSubmit}
               ref={form}
             >
-              
               <div className="form-group mb-4">
                 <input
                   required
@@ -846,6 +859,7 @@ function Category() {
               <button
                 type="submit"
                 className="
+                font-inter
       w-full
       px-6
       py-4
@@ -870,299 +884,390 @@ function Category() {
             </form>
           </div>
           <div className="flex flex-col gap-6 lg:gap-8  mt-6 ">
-            <h2 className=" lg:text-[36px] text-[24px] text-center lg:text-start lg:leading-[48px]  leading-[30px] md:text-[30px] md:leading-[30px] font-bold  text-[#232536] tracking-[-2px] ">
+            <h2 className=" lg:text-[36px] text-[24px] font-sen text-center lg:text-start lg:leading-[48px]  leading-[30px] md:text-[30px] md:leading-[30px] font-bold  text-[#232536] tracking-[-2px] ">
               Categories
             </h2>
 
             <div className="flex flex-col gap-4">
-              <div className="ttt flex flex-row w-full justify-between gap-2  ">
-                <a
-                  href="/category/business"
-                  className={` lg:items-start w-full py-[14px] px-[20px] border border-solid ${
-                    algorithm === "business" && "bg-[#50C0FF]"
-                  } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
-                >
-                  <div className="flex flex-col gap-2 mt-2 ">
-                    <div className="flex">
-                      <div className="text-white font-bold">
-                        <div className=" flex flex-row lg:gap-4 gap-2 md:gap-4 ">
-                          <div
-                            className={`w-[48px] h-[48px] ${
-                              isActive ? "bg-transparent" : "bg-[#FBF6EA]"
-                            }  flex rounded `}
-                          >
-                            <img
-                              src={FIcon}
-                              alt="FIcon"
-                              className="w-[48px] h-[48px] align-middle m-auto flex  "
-                            />
+              <div className="flex flex-row lg:flex-col gap-4">
+                <div className="ttt flex flex-row w-full justify-between gap-2  ">
+                  <a
+                    href="/category/business"
+                    className={` lg:items-start w-[130px] py-[14px] px-[6px] lg:px-[20px] md:px-[20px] md:w-[310px] lg:w-full  border border-solid ${
+                      algorithm === "business" && "bg-[#50C0FF]"
+                    } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
+                  >
+                    <div className="flex flex-col gap-2 mt-2 ">
+                      <div className="flex">
+                        <div className="text-white font-bold">
+                          <div className=" flex lg:flex-row  md:flex-row flex-col gap-3 justify-between lg:gap-6 md:gap-6  ">
+                            <div
+                              className={`w-[48px] h-[48px] ${
+                                isActive ? "bg-transparent" : "bg-[#FBF6EA]"
+                              }  flex rounded `}
+                            >
+                              <img
+                                src={FIcon}
+                                alt="FIcon"
+                                className="w-[48px] h-[48px] align-middle m-auto flex  "
+                              />
+                            </div>
+                            <h2 className="text-[#232536] font-sen font-bold lg:text-[28px]  text-[15px] leading:[20px] md:text-[22px] lg:leading-[40px] md:leading:[35px]  tracking-[-1px] ">
+                              Business Lottery
+                            </h2>
                           </div>
-                          <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
-                            Business Lottery
-                          </h2>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  {businessActive && (
-                    <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
-                      <ul className="flex flex-col list-disc pl-4 gap-2">
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Small Business Funding / Management
-                        </li>
-                        <li className="text-[14px] font-normal leading-[28px]  ">
+                    {businessActive && (
+                      <div className="shadow-3xl hidden lg:block  rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                        <ul className="flex flex-col list-disc font-inter pl-4 gap-2">
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Start-up / Expansion Business Capital
+                            Small Business Funding / Management
                           </li>
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Home Business Assistance
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Women-Owned Business Funding
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Small Business Loans
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Minority-Owned Business Funding
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Private Money / Venture Capital
-                        </li>
-                      </ul>
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            <li className="text-[14px] font-normal leading-[28px]  ">
+                              Start-up / Expansion Business Capital
+                            </li>
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Home Business Assistance
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Women-Owned Business Funding
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Small Business Loans
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Minority-Owned Business Funding
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Private Money / Venture Capital
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </a>
+                </div>
+
+                <div className="ttt flex flex-row w-full justify-between gap-2  ">
+                  <a
+                    href="/category/education"
+                    className={` lg:items-start w-[130px] py-[14px] px-[6px] lg:px-[20px] md:px-[20px] md:w-[310px] lg:w-full border border-solid ${
+                      algorithm === "education" && "bg-[#50C0FF]"
+                    } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
+                  >
+                    <div className="flex flex-col gap-2 mt-2 ">
+                      <div className="flex">
+                        <div className="text-white font-bold">
+                          <div className=" flex lg:flex-row  md:flex-row flex-col gap-3 justify-between lg:gap-6 md:gap-6  ">
+                            <div
+                              className={`w-[48px] h-[48px] ${
+                                isActive ? "bg-transparent" : "bg-[#FBF6EA]"
+                              }  flex rounded `}
+                            >
+                              <img
+                                src={SIcon}
+                                alt="SIcon"
+                                className="w-[23px] h-[23px] align-middle m-auto flex  "
+                              />
+                            </div>
+                            <h2 className="text-[#232536] font-sen font-bold lg:text-[28px]  text-[15px] leading:[20px] md:text-[22px] lg:leading-[40px] md:leading:[35px]  tracking-[-1px] ">
+                              Education Lottery
+                            </h2>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  )}
-                </a>
-                <div
-                  className="flex pt-8  "
-                  onClick={() => setBusinessActive(!businessActive)}
-                >
-                  {businessActive ? (
-                    <BsFillArrowUpCircleFill className="w-8 h-8" />
-                  ) : (
-                    <BsFillArrowDownCircleFill className="w-8 h-8" />
-                  )}
+                    {educationActive && (
+                      <div className="shadow-3xl hidden lg:block  rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                        <ul className="flex font-inter flex-col list-disc pl-4 gap-2">
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Federal Pell Lottery
+                          </li>
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            <li className="text-[14px] font-normal leading-[28px]  ">
+                              Scholarships
+                            </li>
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Student Financial Aid
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Training Lottery
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Tuition Assistance
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Lottery For Research
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Stafford Loans
+                          </li>
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Lottery for Universities
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </a>
                 </div>
               </div>
 
-              <div className="ttt flex flex-row w-full justify-between gap-2  ">
-                <a
-                  href="/category/education"
-                  className={` lg:items-start w-full py-[14px] px-[20px] border border-solid ${
-                    algorithm === "education" && "bg-[#50C0FF]"
-                  } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
-                >
-                  <div className="flex flex-col gap-2 mt-2 ">
-                    <div className="flex">
-                      <div className="text-white font-bold">
-                        <div className=" flex flex-row lg:gap-4 gap-2 md:gap-4 ">
-                          <div
-                            className={`w-[48px] h-[48px] ${
-                              isActive ? "bg-transparent" : "bg-[#FBF6EA]"
-                            }  flex rounded `}
-                          >
-                            <img
-                              src={SIcon}
-                              alt="SIcon"
-                              className="w-[23px] h-[23px] align-middle m-auto flex  "
-                            />
+              <div className="flex flex-row lg:flex-col gap-4">
+                <div className="ttt flex flex-row w-full justify-between gap-2  ">
+                  <a
+                    href="/category/real-estate"
+                    className={` lg:items-start w-[130px] py-[14px] px-[6px] lg:px-[20px] md:px-[20px] md:w-[310px] lg:w-full border border-solid ${
+                      algorithm === "real-estate" && "bg-[#50C0FF]"
+                    } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
+                  >
+                    <div className="flex flex-col gap-2 mt-2 ">
+                      <div className="flex">
+                        <div className="text-white font-bold">
+                          <div className=" flex lg:flex-row  md:flex-row flex-col gap-3 justify-between lg:gap-6 md:gap-6  ">
+                            <div
+                              className={`w-[48px] h-[48px] ${
+                                isActive ? "bg-transparent" : "bg-[#FBF6EA]"
+                              }  flex rounded `}
+                            >
+                              <img
+                                src={SIcon}
+                                alt="SIcon"
+                                className="w-[23px] h-[23px] align-middle m-auto flex  "
+                              />
+                            </div>
+                            <h2 className="text-[#232536] font-sen font-bold lg:text-[28px]   text-[15px] leading:[20px] md:text-[22px] lg:leading-[40px] md:leading:[35px]  tracking-[-1px] ">
+                              Real Estate Lottery
+                            </h2>
                           </div>
-                          <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
-                            Education Lottery
-                          </h2>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  {educationActive && (
-                    <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
-                      <ul className="flex flex-col list-disc pl-4 gap-2">
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Federal Pell Lottery
-                        </li>
-                        <li className="text-[14px] font-normal leading-[28px]  ">
+                    {realEstateActive && (
+                      <div className="shadow-3xl hidden lg:block  rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                        <ul className="flex font-inter flex-col list-disc pl-4 gap-2">
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Scholarships
+                            1st Time Home Buyer
                           </li>
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Student Financial Aid
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Training Lottery
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Tuition Assistance
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Lottery For Research
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Stafford Loans
-                        </li>
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Lottery for Universities
-                        </li>
-                      </ul>
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            <li className="text-[14px] font-normal leading-[28px]  ">
+                              Mobile Homes / Parks
+                            </li>
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Rental Housing Projects
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Commerical Property
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Apartment Buildings
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Land Development
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            RV Parks
+                          </li>
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            New Construction
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </a>
+                </div>
+
+                <div className="ttt flex flex-row w-full justify-between gap-2  ">
+                  <a
+                    href="/category/personal"
+                    className={` lg:items-start w-[130px] py-[14px] px-[6px] lg:px-[20px] md:px-[20px] md:w-[310px] lg:w-full border border-solid ${
+                      algorithm === "personal" && "bg-[#50C0FF]"
+                    } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
+                  >
+                    <div className="flex flex-col gap-2 mt-2 ">
+                      <div className="flex">
+                        <div className="text-white font-bold">
+                          <div className=" flex lg:flex-row  md:flex-row flex-col gap-3 justify-between lg:gap-6 md:gap-6  ">
+                            <div
+                              className={`w-[48px] h-[48px] ${
+                                isActive ? "bg-transparent" : "bg-[#FBF6EA]"
+                              }  flex rounded `}
+                            >
+                              <img
+                                src={SIcon}
+                                alt="SIcon"
+                                className="w-[23px] h-[23px] align-middle m-auto flex  "
+                              />
+                            </div>
+                            <h2 className="text-[#232536] font-sen font-bold lg:text-[28px]   text-[15px] leading:[20px] md:text-[22px] lg:leading-[40px] md:leading:[35px]  tracking-[-1px] ">
+                              Personal Lottery
+                            </h2>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  )}
-                </a>
-                <div
-                  className="flex pt-8  "
-                  onClick={() => setEducationActive(!educationActive)}
-                >
-                  {educationActive ? (
-                    <BsFillArrowUpCircleFill className="w-8 h-8" />
-                  ) : (
-                    <BsFillArrowDownCircleFill className="w-8 h-8" />
-                  )}
+                    {personalActive && (
+                      <div className=" hidden lg:block shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                        <ul className="flex font-inter flex-col list-disc pl-4 gap-2">
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Home Repair
+                          </li>
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            <li className="text-[14px] font-normal leading-[28px]  ">
+                              Rent Assistance
+                            </li>
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Child Care
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Food and Nutrition
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Medical Bills Assistance
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Utility Bills Assistance
+                          </li>{" "}
+                          <li className="text-[14px] font-normal leading-[28px]  ">
+                            Education Assistance
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </a>
                 </div>
               </div>
+            </div>
 
-              <div className="ttt flex flex-row w-full justify-between gap-2  ">
-                <a
-                  href="/category/real-estate"
-                  className={` lg:items-start w-full py-[14px] px-[20px] border border-solid ${
-                    algorithm === "real-estate" && "bg-[#50C0FF]"
-                  } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
-                >
-                  <div className="flex flex-col gap-2 mt-2 ">
-                    <div className="flex">
-                      <div className="text-white font-bold">
-                        <div className=" flex flex-row lg:gap-4 gap-2 md:gap-4 ">
-                          <div
-                            className={`w-[48px] h-[48px] ${
-                              isActive ? "bg-transparent" : "bg-[#FBF6EA]"
-                            }  flex rounded `}
-                          >
-                            <img
-                              src={SIcon}
-                              alt="SIcon"
-                              className="w-[23px] h-[23px] align-middle m-auto flex  "
-                            />
-                          </div>
-                          <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
-                            Real Estate Lottery
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
+            <div className=" p-6 shadow-lg lg:shadow-none bg-gray-200 lg:bg-transparent font-inter text-start md:m-auto md:text-center">
+              <div className="block lg:hidden">
+                {businessActive && (
+                  <div className="shadow-3xl   rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                    <ul className="flex flex-col list-disc pl-4 gap-2">
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Small Business Funding / Management
+                      </li>
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        <li className="text-[14px] font-normal leading-[28px]  ">
+                          Start-up / Expansion Business Capital
+                        </li>
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Home Business Assistance
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Women-Owned Business Funding
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Small Business Loans
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Minority-Owned Business Funding
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Private Money / Venture Capital
+                      </li>
+                    </ul>
                   </div>
-                  {realEstateActive && (
-                    <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
-                      <ul className="flex flex-col list-disc pl-4 gap-2">
+                )}
+                {educationActive && (
+                  <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                    <ul className="flex flex-col list-disc pl-4 gap-2">
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Federal Pell Lottery
+                      </li>
+                      <li className="text-[14px] font-normal leading-[28px]  ">
                         <li className="text-[14px] font-normal leading-[28px]  ">
-                          1st Time Home Buyer
+                          Scholarships
                         </li>
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          <li className="text-[14px] font-normal leading-[28px]  ">
-                            Mobile Homes / Parks
-                          </li>
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Rental Housing Projects
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Commerical Property
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Apartment Buildings
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Land Development
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          RV Parks
-                        </li>
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          New Construction
-                        </li>
-                      </ul>
-                    </div>
-                  )}
-                </a>
-                <div
-                  className="flex pt-8  "
-                  onClick={() => setRealEstateActive(!realEstateActive)}
-                >
-                  {realEstateActive ? (
-                    <BsFillArrowUpCircleFill className="w-8 h-8" />
-                  ) : (
-                    <BsFillArrowDownCircleFill className="w-8 h-8" />
-                  )}
-                </div>
-              </div>
-
-              <div className="ttt flex flex-row w-full justify-between gap-2  ">
-                <a
-                  href="/category/personal"
-                  className={` lg:items-start w-full py-[14px] px-[20px] border border-solid ${
-                    algorithm === "personal" && "bg-[#50C0FF]"
-                  } rounded-lg hover:bg-[#50C0FF] hover:transition hover:duration-300 hover:ease-in-out hover:border-none cursor-pointer border-[#6D6E76]rounded-sm  `}
-                >
-                  <div className="flex flex-col gap-2 mt-2 ">
-                    <div className="flex">
-                      <div className="text-white font-bold">
-                        <div className=" flex flex-row lg:gap-4 gap-2 md:gap-4 ">
-                          <div
-                            className={`w-[48px] h-[48px] ${
-                              isActive ? "bg-transparent" : "bg-[#FBF6EA]"
-                            }  flex rounded `}
-                          >
-                            <img
-                              src={SIcon}
-                              alt="SIcon"
-                              className="w-[23px] h-[23px] align-middle m-auto flex  "
-                            />
-                          </div>
-                          <h2 className="text-[#232536] font-bold lg:text-[28px] text-[20px] md:text-[24px] leading-[40px] tracking-[-1px] ">
-                            Personal Lottery
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Student Financial Aid
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Training Lottery
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Tuition Assistance
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Lottery For Research
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Stafford Loans
+                      </li>
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Lottery for Universities
+                      </li>
+                    </ul>
                   </div>
-                  {personalActive && (
-                    <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
-                      <ul className="flex flex-col list-disc pl-4 gap-2">
+                )}
+                {realEstateActive && (
+                  <div className="shadow-3xl  rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                    <ul className="flex flex-col list-disc pl-4 gap-2">
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        1st Time Home Buyer
+                      </li>
+                      <li className="text-[14px] font-normal leading-[28px]  ">
                         <li className="text-[14px] font-normal leading-[28px]  ">
-                          Home Repair
+                          Mobile Homes / Parks
                         </li>
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Rental Housing Projects
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Commerical Property
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Apartment Buildings
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Land Development
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        RV Parks
+                      </li>
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        New Construction
+                      </li>
+                    </ul>
+                  </div>
+                )}
+                {personalActive && (
+                  <div className="  shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
+                    <ul className="flex flex-col list-disc pl-4 gap-2">
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Home Repair
+                      </li>
+                      <li className="text-[14px] font-normal leading-[28px]  ">
                         <li className="text-[14px] font-normal leading-[28px]  ">
-                          <li className="text-[14px] font-normal leading-[28px]  ">
-                            Rent Assistance
-                          </li>
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Child Care
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Food and Nutrition
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Medical Bills Assistance
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Utility Bills Assistance
-                        </li>{" "}
-                        <li className="text-[14px] font-normal leading-[28px]  ">
-                          Education Assistance
+                          Rent Assistance
                         </li>
-                      </ul>
-                    </div>
-                  )}
-                </a>
-                <div
-                  className="flex pt-8  "
-                  onClick={() => setPersonalActive(!personalActive)}
-                >
-                  {personalActive ? (
-                    <BsFillArrowUpCircleFill className="w-8 h-8" />
-                  ) : (
-                    <BsFillArrowDownCircleFill className="w-8 h-8" />
-                  )}
-                </div>
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Child Care
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Food and Nutrition
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Medical Bills Assistance
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Utility Bills Assistance
+                      </li>{" "}
+                      <li className="text-[14px] font-normal leading-[28px]  ">
+                        Education Assistance
+                      </li>
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           </div>

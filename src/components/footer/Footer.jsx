@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+function Footer() {
+  const [subscribe, setSubscribe] = useState("");
 
-function footer() {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    toast.success("Email Submitted Successfully");
+    setSubscribe(" ");
+  };
+
   return (
-    <footer className="bg-[#232536] md:h-[560px] lg:h-[560px] p-4 pt-10 lg:p-8  ">
-      <div className="flex flex-col gap-10">
+    <footer className="bg-[#232536] md:h-[560px] lg:h-[560px] p-4 pt-10 lg:p-8   ">
+      <div className="flex flex-col gap-10 ">
         <div className="flex flex-col md:flex-row items-center md:justify-between lg:flex-row lg:justify-between gap-8">
           <a href="/">
             <span className="text-[20px] leading-[20px] font-bold flex items-center text-white    ">
@@ -12,7 +21,7 @@ function footer() {
           </a>
 
           <div className="max-w-screen-xl  overflow-hidden ">
-            <nav className="flex flex-wrap justify-center ">
+            <nav className="flex flex-wrap justify-center font-inter ">
               <div className="px-5 py-2">
                 <a
                   href="/"
@@ -21,7 +30,7 @@ function footer() {
                   Home
                 </a>
               </div>
-            
+
               <div className="px-5 py-2">
                 <a
                   href="/about"
@@ -38,34 +47,39 @@ function footer() {
                   Contact Us
                 </a>
               </div>
-          
             </nav>
           </div>
         </div>
 
         <div className="relative  ">
-            <div className="w-full h-full absolute bg-white  opacity-5 "></div>
-          <div className="lg:h-[256px] md:h-[256px] w-full  ">
+          <div className="  w-full -z-5 h-full absolute bg-white  opacity-5 "></div>
+          <div className="lg:h-[256px] md:h-[256px] w-full z-10   ">
             <div className="p-10 items-center lg:items-baselineName lg:pt-16 md:pt-10 pt-8 flex flex-col lg:flex-row md:flex-col gap-8  lg:justify-between">
-              <h1 className="font-bold text-[24px] text-start lg:text-[36px] text-white    md:text-[30px]  lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-red  lg:w-[562px] md:w-[450px]   ">
+              <h1 className="font-bold text-[24px] font-sen text-start lg:text-[36px] text-white    md:text-[30px]  lg:leading-[48px] md:leading-[38px] tracking-[-1px] text-red  lg:w-[562px] md:w-[450px]   ">
                 Subscribe to our news letter to get latest updates and news
               </h1>
 
-              <form className="lg:w-[400px] md:w-[350px] w-full ">
+              <form
+                className="lg:w-[400px] md:w-[350px] w-full "
+                onSubmit={handleFormSubmit}
+              >
                 <label htmlFor="UserEmail" className="sr-only">
-                  {" "}
-                  Email{" "}
+                 
+                  Email
                 </label>
 
                 <div className="p-2 focus-within:ring sm:flex sm:items-center sm:gap-4">
                   <input
                     type="email"
-                    id="UserEmail"
-                    placeholder="john@rhcp.com"
+                    placeholder="user@email.com"
                     className="w-full py-3 px-4  border-none focus:border-transparent focus:ring-transparent sm:text-sm"
+                    value={subscribe}
+                    onChange={(e) => {
+                      setSubscribe(e.target.value);
+                    }}
                   />
 
-                  <button className="w-full px-6 py-3 mt-1 text-sm font-bold tracking-wide text-white uppercase transition-none bg-[#50C0FF] hover:bg-blue-400 sm:mt-0 sm:w-auto sm:flex-shrink-0">
+                  <button className="w-full font-sen px-6 py-3 mt-1 text-sm font-bold tracking-wide text-white uppercase transition-none bg-[#50C0FF] hover:bg-blue-400 sm:mt-0 sm:w-auto sm:flex-shrink-0">
                     Subscribe
                   </button>
                 </div>
@@ -75,10 +89,10 @@ function footer() {
         </div>
         <div className="flex flex-col md:flex-row items-center md:justify-between lg:flex-row lg:justify-between gap-2 ">
           <div className="flex flex-col gap-1">
-            <h2 className=" leading-[28px] text-[16px] font-normal text-white opacity-70 ">
+            <h2 className=" leading-[28px] font-sen text-[16px] font-normal text-white opacity-70 ">
               Finstreet 118 2561 Fintown
             </h2>
-            <h2 className=" leading-[28px] text-[16px] font-normal text-white opacity-70 ">
+            <h2 className=" leading-[28px] font-sen text-[16px] font-normal text-white opacity-70 ">
               Hello@finsweet.com 020 7993 2905
             </h2>
           </div>
@@ -86,7 +100,7 @@ function footer() {
           <ul className="flex justify-start gap-6 mt-8 sm:mt-0 sm:justify-end">
             <li>
               <a
-                href="/"
+                href="https://web.facebook.com/login/patric-fox"
                 rel="noreferrer"
                 target="_blank"
                 className="text-white opacity-70 transition hover:opacity-75"
@@ -110,7 +124,7 @@ function footer() {
 
             <li>
               <a
-                href="/"
+                href="https://twitter.com/PatrucFox91509499"
                 rel="noreferrer"
                 target="_blank"
                 className="text-white opacity-70 transition hover:opacity-75"
@@ -130,7 +144,7 @@ function footer() {
 
             <li>
               <a
-                href="/"
+                href="https://www.instagram.com/patric-fox/"
                 rel="noreferrer"
                 target="_blank"
                 className="text-white opacity-70transition hover:opacity-75"
@@ -151,30 +165,6 @@ function footer() {
                 </svg>
               </a>
             </li>
-
-            <li>
-              <a
-                href="/"
-                rel="noreferrer"
-                target="_blank"
-                className="text-white opacity-70 transition hover:opacity-75"
-              >
-                <span className="sr-only">GitHub</span>
-
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  ariaHidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -182,4 +172,4 @@ function footer() {
   );
 }
 
-export default footer;
+export default Footer;
