@@ -28,9 +28,8 @@ function Testimonial() {
                 </h2>
 
                 <h1 className="font-bold text-[20px] font-sen text-start lg:text-[28px] md:text-[24px] lg:leading-[40px] md:leading-[38px] tracking-[-1px] text-[#232536] lg:w-[345px] ">
-                  What people say about our lottery programmes
+                  What people say about our programmes
                 </h1>
-               
               </div>
 
               <div className="absolute left-[50%] rotate-90 pt-80">
@@ -46,8 +45,8 @@ function Testimonial() {
                     data-bs-ride="carousel"
                     key={index}
                   >
-                    <div class="carousel-inner relative w-full overflow-hidden">
-                      <div class="carousel-item active relative float-left w-full text-start lg:h-[226px] ">
+                    <div class="carousel-inner lg:h-[90px] relative w-full overflow-hidden">
+                      <div class="carousel-item active relative float-left w-full text-start lg:pb-2 ">
                         <p class="text-xl italic mx-auto text-[#232536] font-sen max-w-4xl">
                           {item.text}
                         </p>
@@ -58,7 +57,7 @@ function Testimonial() {
                         <div class=" flex justify-center">
                           <img
                             src={item.pic}
-                            className="rounded-full w-14 h-14 shadow-lg"
+                            className="rounded-lg w-32 h-28 shadow-lg"
                             alt="sampleimage"
                           />
                         </div>
@@ -67,7 +66,7 @@ function Testimonial() {
                       <div className="flex flex-row gap-8 items-center ">
                         <button
                           type="button"
-                          className="carousel-control-prev bg-white text-black rounded-full p-4"
+                          className="carousel-control-prev bg-white text-black hover:bg-black hover:text-white hover:ease-in hover:transition hover:duration-700  rounded-full p-4"
                           onClick={handlePrevItem}
                         >
                           <span
@@ -81,7 +80,7 @@ function Testimonial() {
                         </button>
                         <button
                           type="button"
-                          className="carousel-control-next bg-black text-white rounded-full p-4"
+                          className="carousel-control-next bg-white text-black hover:bg-black hover:text-white hover:ease-in hover:transition hover:duration-700 rounded-full p-4"
                           onClick={handleNextItem}
                         >
                           <span
@@ -102,14 +101,34 @@ function Testimonial() {
         </div>
       </div>
 
-      <div className="flex flex-col lg:p-10 md:p-10 p-2 mb-8 lg:mb-12 justify-center text-center m-auto mt-8 lg:w-[461px] md:w-[461px] gap-4 pb-20">
+      <div className="flex flex-col lg:p-10 md:p-10 p-2 mb-8 lg:mb-12 justify-center text-center m-auto mt-8  gap-4 pb-20">
         <h1 className="font-bold text-[20px] font-sen text-center lg:text-[28px] md:text-[24px] lg:leading-[40px] md:leading-[38px] tracking-[-1px] text-[#232536]  ">
-          Your are one step away from a lifetime opportunity
+          Get Help From Family Support Program
         </h1>
-        <p className="text-[#6D6E76] font-inter text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] lg:w-[349px] ">
-          The Sustentation Lottery Grants goal is to improve the health and
-          economic security of United States citizens.
-        </p>
+        <hr  className="h-[2px] w-full  bg-orange-500 max-w-[600px] m-auto items-center "/>
+        <div className="flex flex-col gap-2 text-start m-auto max-w-[800px]">
+          <p className="text-[#6D6E76] font-inter  font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px]  ">
+            Family Support Program provides financial support to more than a
+            million people each year. We are the pantry to Australia’s charity
+            sector, providing financial support to 2,950 frontline charities.
+          </p>
+          <p className="text-[#6D6E76] font-inter  font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px]  ">
+            We know one in three people struggling to provide for their
+            household needs are new to the situation.
+          </p>
+          <p className="text-[#6D6E76] font-inter  font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px]  ">
+            There is no shame in asking for help. Life happens to us all and
+            we’re here for everyone.
+          </p>
+          <p className="text-[#6D6E76] font-inter  font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px]  ">
+            Through our wonderful charity partners in Victoria, we’re able to
+            provide 1.2 million financial aid in a month to Victorians in need.
+            People like Mandy, who has struggled to find work to provide for her
+            family due to ongoing health issues. And Deb, a loving Grandmother
+            who’s cancer diagnosis has put her in a position where she struggles
+            to access a steady income.{" "}
+          </p>
+        </div>
         <div>
           <a href="/category/business">
             <button className="flex flex-row items-start gap-[12px] m-auto  rounded-sm  bg-[#50C0FF] py-[16px] px-[48px] ">

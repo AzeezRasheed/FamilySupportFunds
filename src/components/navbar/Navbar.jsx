@@ -83,11 +83,11 @@ function Navbar() {
               </li>
               <li className="md:hidden lg:block">
                 <a
-                  href="/winners-list"
+                  href="/donate"
                   className="block py-2 pl-3 pr-4 text-white text-[16px] leading-[28px] md:hover:bg-transparent md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500  dark:hover:text-blue-50  "
                   ariaCurrent="page"
                 >
-                  Winners List
+                 Donate
                 </a>
               </li>
             </ul>

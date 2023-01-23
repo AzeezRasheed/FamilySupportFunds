@@ -11,7 +11,7 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-[#232536] md:h-[560px] lg:h-[560px] p-4 pt-10 lg:p-8   ">
+    <footer className="bg-[#232536]  p-4 pt-10 lg:p-8   ">
       <div className="flex flex-col gap-10 ">
         <div className="flex flex-col md:flex-row items-center md:justify-between lg:flex-row lg:justify-between gap-8">
           <a href="/">
@@ -39,6 +39,15 @@ function Footer() {
                   About Us
                 </a>
               </div>
+
+              <div className="px-5 py-2">
+                <a
+                  href="/donate"
+                  className="text-base leading-6 text-white hover:text-blue-500"
+                >
+                  Donate
+                </a>
+              </div>
               <div className="px-5 py-2">
                 <a
                   href="/contact-us"
@@ -64,7 +73,6 @@ function Footer() {
                 onSubmit={handleFormSubmit}
               >
                 <label htmlFor="UserEmail" className="sr-only">
-                 
                   Email
                 </label>
 
@@ -90,10 +98,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row items-center md:justify-between lg:flex-row lg:justify-between gap-2 ">
           <div className="flex flex-col gap-1">
             <h2 className=" leading-[28px] font-sen text-[16px] font-normal text-white opacity-70 ">
-              Finstreet 118 2561 Fintown
-            </h2>
-            <h2 className=" leading-[28px] font-sen text-[16px] font-normal text-white opacity-70 ">
-              Hello@finsweet.com 020 7993 2905
+              &copy; Family Support Program {new Date().getFullYear()}
             </h2>
           </div>
 

@@ -132,8 +132,6 @@ function Category() {
       selectedState &&
       selectedCity &&
       selectedDisability &&
-      selectedAge &&
-      selectedGender &&
       ethnicity &&
       citizenshipStatus &&
       selectedStatus
@@ -144,8 +142,6 @@ function Category() {
         last_name: lastName,
         home_address: homeAddress,
         zip_code: zipCode,
-        age: selectedAge,
-        gender: selectedGender,
         phone_number: phone,
         state: selectedState,
         city: selectedCity,
@@ -183,8 +179,6 @@ function Category() {
       setHomeAddress(" ");
       setSelectedState(" ");
       setSelectedCity(" ");
-      setSelectedAge(" ");
-      setSelectedGender(" ");
       setPhone(" ");
       setDate(" ");
       setEmail(" ");
@@ -207,33 +201,33 @@ function Category() {
       <Navbar />
       <div className="flex flex-col justify-center m-auto  ">
         <div className="flex flex-col items-center justify-center w-full m-auto  ">
-          <div className=" bg-[#F4F0F8] h-[348px] w-full ">
-            <div className="flex flex-col lg:p-14 md:p-14 p-14  gap-4  items-center ">
-              <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-[#232536] capitalize  ">
-                {type} Lottery
+          <div className=" bg-category   lg:h-[500px] w-full  bg-cover object-cover bg-center">
+            <div className="flex flex-col pt-40 md:pt-40 lg:pt-40 lg:p-14 md:p-14 p-14  gap-4  items-center ">
+              <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-white capitalize  ">
+                {type} Support
               </h1>
               {type === "personal" && (
-                <p className="text-[#6D6E76] font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-white font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.personal}
                 </p>
               )}
               {type === "business" && (
-                <p className="text-[#6D6E76] font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-white font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.business}
                 </p>
               )}{" "}
               {type === "education" && (
-                <p className="text-[#6D6E76] font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-white font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.education}
                 </p>
               )}{" "}
               {type === "real estate" && (
-                <p className="text-[#6D6E76] font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-white font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.housing}
                 </p>
               )}
-              <p className="text-[#232536] font-inter lg:w-[515px] uppercase text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
-                Apply {">"} {type} Lottery
+              <p className="text- font-inter text-orange-500  lg:w-[515px] uppercase text-center font-bold text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                Apply {">"} {type} Support
               </p>
             </div>
           </div>
@@ -245,7 +239,7 @@ function Category() {
           <div className=" flex flex-col gap-8 flex-2 ">
             <h2 className=" lg:text-[36px] font-sen text-[24px] pt-6 lg:w-[500px] lg:leading-[48px]  leading-[30px] md:text-[30px] md:leading-[30px] font-bold  text-[#232536]  tracking-[-2px] ">
               Fill the form below to enter for a{" "}
-              <span className="capitalize">{type}</span> Lottery
+              <span className="capitalize">{type}</span> Support
             </h2>
             <form
               className="lg:w-[500px] pb-6 lg:pl-6 pl-0 pr-0 "
@@ -464,130 +458,10 @@ function Category() {
                 />
               </div>
 
-              <div className="form-group mb-4 flex flex-col lg:flex-row gap-4 w-full ">
-                <FormControl sx={{ width: "100%" }}>
-                  <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
-                    Gender
-                  </InputLabel>
-                  <Select
-                    required
-                    className=" 
-                       w-full
-                       font-normal
-                       transition
-                       ease-in-out
-                       text-gray-700
-                       bg-white bg-clip-padding
-                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                       rounded
-                    
-                       m-0
-                     "
-                    value={selectedGender}
-                    onChange={(e) => {
-                      setSelectedGender(e.target.value);
-                    }}
-                    label="Gender"
-                    name="gender"
-                  >
-                    <MenuItem value={"male"}>
-                      <em>Male</em>
-                    </MenuItem>
-                    <MenuItem value={"female"}>
-                      <em>Female</em>
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-                <FormControl sx={{ width: "100%" }}>
-                  <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
-                    What is your age?
-                  </InputLabel>
-                  <Select
-                    required
-                    className=" 
-                       w-full
-                       font-normal
-                       transition
-                       ease-in-out
-                       text-gray-700
-                       bg-white bg-clip-padding
-                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                       rounded
-                    
-                       m-0
-                     "
-                    value={selectedAge}
-                    onChange={(e) => {
-                      setSelectedAge(e.target.value);
-                    }}
-                    label="What is your age?"
-                    name="age"
-                  >
-                    <MenuItem value={"18-25"}>
-                      <em>18-25</em>
-                    </MenuItem>
-                    <MenuItem value={"26-34"}>
-                      <em>26-34</em>
-                    </MenuItem>
-                    <MenuItem value={"35-49"}>
-                      <em>35-49</em>
-                    </MenuItem>
-                    <MenuItem value={"50-65"}>
-                      <em>50-65</em>
-                    </MenuItem>
-                    <MenuItem value={"65-80"}>
-                      <em>65-80</em>
-                    </MenuItem>
-                    <MenuItem value={"80+"}>
-                      <em>80 +</em>
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-              </div>
+           
 
-              <div className="form-group mb-4 flex flex-col lg:flex-row gap-4 w-full ">
-                <FormControl sx={{ width: "100%" }}>
-                  <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
-                    Citizenship Status
-                  </InputLabel>
-                  <Select
-                    required
-                    className=" 
-                       w-full
-                       font-normal
-                       transition
-                       ease-in-out
-                       text-gray-700
-                       bg-white bg-clip-padding
-                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                       rounded
-                    
-                       m-0
-                     "
-                    value={citizenshipStatus}
-                    onChange={(e) => {
-                      setCitizenshipStatus(e.target.value);
-                    }}
-                    label="Citizenship Status"
-                    name="citizenshipStatus"
-                  >
-                    <MenuItem value={"U.S. Resident"}>
-                      <em>U.S. Resident</em>
-                    </MenuItem>
-                    <MenuItem value={"Resident Alien"}>
-                      <em>Resident Alien</em>
-                    </MenuItem>
-                    <MenuItem value={"Green Card Holder"}>
-                      <em>Green Card Holder</em>
-                    </MenuItem>
-                    <MenuItem value={"Permanent Resident"}>
-                      <em>Permanent Resident</em>
-                    </MenuItem>
-                    <MenuItem value={"Not sure"}>
-                      <em>Not Sure</em>
-                    </MenuItem>
-                  </Select>
-                </FormControl>
+              <div className="form-group mb-4 flex flex-row w-full ">
+          
                 <FormControl sx={{ width: "100%" }}>
                   <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
                     Ethnicity
@@ -913,7 +787,7 @@ function Category() {
                               />
                             </div>
                             <h2 className="text-[#232536] font-sen font-bold lg:text-[28px]  text-[15px] leading:[20px] md:text-[22px] lg:leading-[40px] md:leading:[35px]  tracking-[-1px] ">
-                              Business Lottery
+                              Business Support
                             </h2>
                           </div>
                         </div>
@@ -974,7 +848,7 @@ function Category() {
                               />
                             </div>
                             <h2 className="text-[#232536] font-sen font-bold lg:text-[28px]  text-[15px] leading:[20px] md:text-[22px] lg:leading-[40px] md:leading:[35px]  tracking-[-1px] ">
-                              Education Lottery
+                              Education Support
                             </h2>
                           </div>
                         </div>
@@ -984,7 +858,7 @@ function Category() {
                       <div className="shadow-3xl hidden lg:block  rounded-2xl shadow-cyan-500/50 p-4 mb-6">
                         <ul className="flex font-inter flex-col list-disc pl-4 gap-2">
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Federal Pell Lottery
+                            Federal Pell Support
                           </li>
                           <li className="text-[14px] font-normal leading-[28px]  ">
                             <li className="text-[14px] font-normal leading-[28px]  ">
@@ -995,19 +869,19 @@ function Category() {
                             Student Financial Aid
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Training Lottery
+                            Training Support
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
                             Tuition Assistance
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Lottery For Research
+                            Support For Research
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
                             Stafford Loans
                           </li>
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Lottery for Universities
+                            Support for Universities
                           </li>
                         </ul>
                       </div>
@@ -1040,7 +914,7 @@ function Category() {
                               />
                             </div>
                             <h2 className="text-[#232536] font-sen font-bold lg:text-[28px]   text-[15px] leading:[20px] md:text-[22px] lg:leading-[40px] md:leading:[35px]  tracking-[-1px] ">
-                              Real Estate Lottery
+                              Real Estate Support
                             </h2>
                           </div>
                         </div>
@@ -1104,7 +978,7 @@ function Category() {
                               />
                             </div>
                             <h2 className="text-[#232536] font-sen font-bold lg:text-[28px]   text-[15px] leading:[20px] md:text-[22px] lg:leading-[40px] md:leading:[35px]  tracking-[-1px] ">
-                              Personal Lottery
+                              Personal Support
                             </h2>
                           </div>
                         </div>
@@ -1179,7 +1053,7 @@ function Category() {
                   <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
                     <ul className="flex flex-col list-disc pl-4 gap-2">
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Federal Pell Lottery
+                        Federal Pell Support
                       </li>
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         <li className="text-[14px] font-normal leading-[28px]  ">
@@ -1190,19 +1064,19 @@ function Category() {
                         Student Financial Aid
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Training Lottery
+                        Training Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Tuition Assistance
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Lottery For Research
+                        Support For Research
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Stafford Loans
                       </li>
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Lottery for Universities
+                        Support for Universities
                       </li>
                     </ul>
                   </div>

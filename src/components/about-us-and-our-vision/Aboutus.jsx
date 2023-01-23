@@ -3,7 +3,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 function Aboutus() {
   const text =
-    "The Sustentation Lottery Grants goal is to improve the health and economic security of United States citizens by providing them with a comprehensive list of third-party resources, benefits, and programs that they may be eligible for. The Sustentation Lottery Grants is a comprehensive, free online tool that connects U.S. citizens with benefits they may qualify for. These programs include but are not limited to Information, Education, and access to Special Programs, Services, and Discounts, etc., FESSA strives to help our visitors better manage their personal finances along with guiding them to special Federal, State, and Private Benefit Programs.The team monitors the benefits landscape for updates and changes to policies and programs. We match your unique needs to benefit programs and eligibility requirements using our comprehensive tool.";
+    "Families come in all shapes and sizes. No matter how they are constructed, Family Support Funds Australia is committed to supporting them to realise their potential. All families encounter difficult and challenging times and many will find ways to deal with their problems, getting the support they need from friends and relatives.There are times, however, when problems can seem too overwhelming to manage. FSF works to tackle some of the most complex and difficult issues facing families today – including financial hardship, mental health problems, social isolation, learning disabilities, domestic abuse, or substance misuse and alcohol problems.These issues can have a huge impact on the stability of family life, and will have a significant impact on the health, wellbeing and development of all family members.FSP believes that families facing these difficulties should have the support they need to become stronger, happier and healthier. With the right kind of support, families can overcome their difficulties and find hope for a brighter future.";
   const shortenWord = (text) => {
     return text.substring(0, 250);
   };
@@ -66,7 +66,7 @@ function Aboutus() {
                 <p className="text-[#6D6E76] font-inter font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] ">
                   To keep U.S citizen success central while providing the
                   highest level of service, and equal opportunity in the
-                  awarding of funds at all citizens. Creating valuable life for
+                  awarding of funds for all citizens. Creating valuable life for
                   people all around the world, we increase opportunities for
                   access and affordability by providing accurate financial
                   information, and individualized guidance and support for

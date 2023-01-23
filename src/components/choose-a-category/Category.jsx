@@ -3,7 +3,7 @@ import FIcon from "../../assets/FIcon.png";
 import SIcon from "../../assets/SIcon.png";
 import TIcon from "../../assets/TIcon.png";
 import FthIcon from "../../assets/FthIcon.png";
-import CloseUp from "../../assets/close-up.png";
+import CloseUp from "../../assets/IMG-20230122-WA0006.jpg";
 import Logo1 from "../../assets/Logo 1.png";
 import Logo2 from "../../assets/Logo 2.png";
 import Logo3 from "../../assets/Logo 3.png";
@@ -14,7 +14,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 function Category() {
   const [isActive, setIsActive] = useState(false);
   const text =
-    "We understand that sometimes it can be difficult to cover all your expenses every month so we have developed a comprehensive directory of benefits, resources, programs and help for those that qualify. There are numerous local, state and federal government organizations, included but not limited to; charities, churches, private businesses and other companies offer a wide variety of low-income assistance programs you may be eligible for.There are several programs that can help hardship victims get help with paying your rent, utility bills, mortgage assistance, or provide foreclosure prevention. There are additional services that can help with medical bills, school loans, personal loans or related expenses, and much more.There are over 1,100 community actions agencies located across the country that provide low and moderate income families with various services. The programs and resources that are administered can provide people with short term assistance with paying their bills.";
+    "Last year, Family Support Program sourced the equivalent of 86.7 million financial aid for our 2,950 charity partners, providing financial support to more than a million people every year. Our work makes a positive difference in the lives of Australians, with recipients of financial support reporting they are able to focus and concentrate, are less stressed and more hopeful. Family Support Program not only plays a lead role in fighting poverty, but also a vitally important role in tackling Australia’s family problems. Our financial support rescue operations last year saved 92.7 million kilograms of CO2 emissions. For every financial support provided by Family Support Program, the social return on investment has been valued at $23. This means the impact of Family Support Program work in the community is worth almost $1 billion annually. Despite our very best efforts, the financial support we supply is still not enough. That’s why we rely on the financial sector as well as individuals, corporations, community groups and all levels of government to join us in the fight against poverty.";
   const shortenWord = (text) => {
     return text.substring(0, 320);
   };
@@ -24,7 +24,7 @@ function Category() {
     <section>
       <div className="flex flex-col gap-10">
         <div className="flex flex-col lg:p-10 md:p-10 p-2 justify-center m-auto mt-8 gap-8">
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <h2 className=" p-4 font-sen text-center lg:text-[36px] md:text-[30px] text-[24px] leading-[48px] font-bold capitalize text-[#232536] tracking-[1px] lg:tracking-[-2px] md:tracking-[-2px] #232536 ">
               Choose A Catagory
             </h2>
@@ -48,7 +48,7 @@ function Category() {
                       />
                     </div>
                     <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
-                      Business Lottery
+                      Business Support
                     </h2>
                     <ul className="flex flex-col font-inter list-disc pl-4 gap-2">
                       <li className="text-[14px] font-normal leading-[28px]  ">
@@ -103,11 +103,11 @@ function Category() {
                       />
                     </div>
                     <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
-                      Education Lottery
+                      Education Support
                     </h2>
                     <ul className="flex flex-col font-inter list-disc pl-4 gap-2 pb-4">
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Federal Pell Lottery
+                        Federal Pell Support
                       </li>
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         <li className="text-[14px] font-normal leading-[28px]  ">
@@ -118,19 +118,19 @@ function Category() {
                         Student Financial Aid
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Training Lottery
+                        Training Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Tuition Assistance
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Lottery For Research
+                        Support For Research
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Stafford Loans
                       </li>
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Lottery for Universities
+                        Support for Universities
                       </li>
                     </ul>
                   </div>
@@ -161,7 +161,7 @@ function Category() {
                       />
                     </div>
                     <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
-                      Real Estate Lottery
+                      Real Estate Support
                     </h2>
                     <ul className="flex flex-col font-inter list-disc pl-4 gap-2 pb-4">
                       <li className="text-[14px] font-normal leading-[28px]  ">
@@ -264,10 +264,10 @@ function Category() {
           <div className=" ">
             <img src={CloseUp} alt="close-up" className="w-full  " />
           </div>
-          <div className=" w-full lg:w-[706px]   md:h-[548px] lg:h-[548px] bg-white   shadow-md lg:mt-[158px] lg:-ml-80  ">
-            <div className="p-10 flex flex-col gap-3">
+          <div className=" w-full lg:w-[706px]     bg-white   shadow-md lg:mt-[158px] lg:-ml-80  ">
+            <div className="p-6 flex flex-col gap-3">
               <h2 className=" text-[16px] font-inter leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
-                Why we started
+              Our Impact
               </h2>
 
               <h1 className="font-bold text-[30px] text-start font-sen  leading-[40px] tracking-[-2px] text-[#232536] lg:w-[546px] ">

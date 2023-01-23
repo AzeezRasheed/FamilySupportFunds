@@ -9,6 +9,8 @@ import { useRef } from "react";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Image from "../../assets/homepage-banner.webp";
+
 function Contact() {
   const form = useRef();
 
@@ -42,20 +44,22 @@ function Contact() {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col lg:p-10 md:p-10 p-2 justify-center m-auto mt-8 mb-14 max-w-[768px] ">
-        <div className="flex flex-col lg:p-14 md:p-14 p-0 pb-14  gap-4  items-center  ">
-          <h2 className=" text-[16px] leading-[20px] font-inter font-semibold capitalize text-[#232536]  tracking-[3px] ">
-            Contact us
-          </h2>
-          <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-[#232536]  ">
-            Let’s Start a Conversation
-          </h1>
-          <p className="text-[#6D6E76] font-normal font-inter text-[12px] lg:text-[16px] md:text-[16px] text-center leading-[28px] lg:w-[768px] ">
-            Fill out the form below
-          </p>
+      <div className="flex flex-col  justify-center m-auto mb-14  ">
+        <div className=" bg-category  lg:h-[500px] w-full  bg-cover object-cover bg-center">
+          <div className="flex flex-col lg:p-14 md:p-14 p-14  gap-4 pt-40 md:pt-40 lg:pt-40  items-center ">
+            <h2 className=" text-[16px] leading-[20px] font-inter font-semibold capitalize text-white  tracking-[3px] ">
+              Contact us
+            </h2>
+            <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-white ">
+              Let’s Start a Conversation
+            </h1>
+            <p className="text-[#f4f5fb] font-normal font-inter text-[12px] lg:text-[16px] md:text-[16px] text-center leading-[28px] lg:w-[768px] ">
+              We're Ready, Let's Talk.
+            </p>
+          </div>
         </div>
 
-        <div className="flex flex-col  items-center ">
+        <div className="flex flex-col  items-center max-w-[768px] m-auto w-full p-6 pl-0 pr-0 lg:p-10 md:p-10">
           <div className=" lg:h-[240px] h-full w-full   bg-[#175C0C] lg:p-4 lg:pt-6 md:text-center  p-6  gap-6 lg:gap-2 flex flex-col  ">
             <div className="flex flex-col gap-4 text-center m-auto">
               <p className="text-[#FFFFFF] font-inter opacity-60 font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px] lg:w-[349px] ">
@@ -79,7 +83,7 @@ function Contact() {
           </div>
         </div>
 
-        <div className="block p-6 pl-0 pr-0 ">
+        <div className="block p-6 pl-0 pr-0 lg:p-10 md:p-10 max-w-[768px] m-auto w-full">
           <form ref={form} onSubmit={sendEmail}>
             <div className="form-group mb-6">
               <input
