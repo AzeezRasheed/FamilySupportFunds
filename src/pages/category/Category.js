@@ -14,6 +14,11 @@ import "react-toastify/dist/ReactToastify.css";
 import dataForCategory from "./dataForCategory";
 import { State } from "country-state-city";
 import emailjs from "emailjs-com";
+import { Dayjs } from "dayjs";
+import TextField from "@mui/material/TextField";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 function Category() {
   const { id } = useParams();
@@ -59,7 +64,6 @@ function Category() {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedDisability, setSelectedDisability] = useState("");
-  const [ethnicity, setEthnicity] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
 
   const selectedStateHandler = (value) => {
@@ -81,7 +85,6 @@ function Category() {
     disability: "",
     occupation: "",
     category: "",
-    ethnicity: "",
   };
 
   useEffect(() => {
@@ -104,7 +107,6 @@ function Category() {
       selectedState &&
       selectedCity &&
       selectedDisability &&
-      ethnicity &&
       selectedStatus
     ) {
       formData = {
@@ -122,7 +124,6 @@ function Category() {
         email: email,
         disability: selectedDisability,
         occupation: occupation,
-        ethnicity: ethnicity,
         category: id,
       };
 
@@ -154,7 +155,6 @@ function Category() {
       setEmail(" ");
       setOccupation(" ");
       setIncome(" ");
-      setEthnicity(" ");
       setSelectedStatus(" ");
       setSelectedDisability(" ");
 
@@ -170,28 +170,34 @@ function Category() {
       <Navbar />
       <div className="flex flex-col justify-center m-auto  ">
         <div className="flex flex-col items-center justify-center w-full m-auto  ">
-          <div className=" bg-category   lg:h-[500px] w-full  bg-cover object-cover bg-center">
+          <div
+            className={` ${type === "business" && "bg-business"}  ${
+              type === "personal" && "bg-personal"
+            } ${type === "education" && "bg-education"}  ${
+              type === "real estate" && "bg-realestate"
+            }   lg:h-[500px] w-full  bg-cover object-cover bg-center`}
+          >
             <div className="flex flex-col pt-40 md:pt-40 lg:pt-40 lg:p-14 md:p-14 p-14  gap-4  items-center ">
               <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-white capitalize  ">
                 {type} Support
               </h1>
               {type === "personal" && (
-                <p className="text-white font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-white font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.personal}
                 </p>
               )}
               {type === "business" && (
-                <p className="text-white font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-white font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.business}
                 </p>
               )}{" "}
               {type === "education" && (
-                <p className="text-white font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-white font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.education}
                 </p>
               )}{" "}
               {type === "real estate" && (
-                <p className="text-white font-inter lg:w-[515px] text-center font-normal text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-white font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.housing}
                 </p>
               )}
@@ -404,90 +410,18 @@ function Category() {
                   onChange={(e) => setPhone(e.target.value)}
                   name="phoneNumber"
                 />
-                <input
-                  type="date"
-                  required
-                  className="form-control
-        block
-        w-full
-        px-3
-        py-4
-        text-base
-        font-normal
-        text-gray-700
-        bg-white bg-clip-padding
-        border border-solid border-gray-300
-        rounded
-        m-0
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  placeholder="Select a date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  name="date"
-                />
-              </div>
-
-              <div className="form-group mb-4 flex flex-row w-full ">
-                <FormControl sx={{ width: "100%" }}>
-                  <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
-                    Ethnicity
-                  </InputLabel>
-                  <Select
-                    required
-                    className=" 
-                       w-full
-                       font-normal
-                       transition
-                       ease-in-out
-                       text-gray-700
-                       bg-white bg-clip-padding
-                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                       rounded
-                    
-                       m-0
-                     "
-                    value={ethnicity}
-                    onChange={(e) => {
-                      setEthnicity(e.target.value);
-                    }}
-                    label="Ethnicity"
-                    name="ethnicity"
-                  >
-                    <MenuItem value={"Asian American"}>
-                      <em>Asian American</em>
-                    </MenuItem>
-                    <MenuItem value={"Black Or African American"}>
-                      <em>Black Or African American</em>
-                    </MenuItem>
-                    <MenuItem value={"Hispanic"}>
-                      <em>Hispanic</em>
-                    </MenuItem>
-                    <MenuItem value={"Latino"}>
-                      <em>Latino</em>
-                    </MenuItem>
-                    <MenuItem value={"Middle Eastern American"}>
-                      <em>Middle Eastern American</em>
-                    </MenuItem>
-                    <MenuItem value={"Multi-racial"}>
-                      <em>Multi-racial</em>
-                    </MenuItem>
-                    <MenuItem value={"Native American"}>
-                      <em>Native American</em>
-                    </MenuItem>
-                    <MenuItem value={"Native Hawaiian"}>
-                      <em>Native Hawaiian</em>
-                    </MenuItem>
-                    <MenuItem value={"Other"}>
-                      <em>Other</em>
-                    </MenuItem>
-                    <MenuItem value={"Pacific Islander"}>
-                      <em>Pacific Islander</em>
-                    </MenuItem>
-                    <MenuItem value={"White"}>
-                      <em>White</em>
-                    </MenuItem>
-                  </Select>
-                </FormControl>
+            
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DatePicker
+      className=" block w-full px-3 py-4 font-normal text-gray-700 bg-white  border border-solid border-gray-300 rounded m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+        label="Your Date Of Birth"
+        value={date}
+        onChange={(newValue) => {
+          setDate(newValue);
+        }}
+        renderInput={(params) => <TextField {...params} />}
+      />
+    </LocalizationProvider>
               </div>
 
               <div className="form-group mb-4 flex flex-col lg:flex-row gap-4 w-full ">

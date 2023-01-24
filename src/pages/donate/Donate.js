@@ -7,9 +7,9 @@ function Donate() {
     <section className="bg-white flex flex-col  justify-center m-auto ">
       <Navbar />
 
-      <div className=" bg-category  lg:h-[500px] w-full  bg-cover object-cover bg-center">
+      <div className=" bg-donate  lg:h-[500px] w-full  bg-cover object-cover bg-center">
         <div className="flex flex-col lg:p-14 md:p-14 p-20 pt-40 md:pt-40 lg:pt-40 gap-4  items-center ">
-          <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[-2px] md:leading-[48px] leading-[40px] tracking-[2px] text-white capitalize  ">
+          <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[-2px] md:leading-[48px] leading-[40px] tracking-[2px] text-slate-100 capitalize  ">
             Donate
           </h1>
         </div>

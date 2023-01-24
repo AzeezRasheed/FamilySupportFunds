@@ -45,7 +45,7 @@ function Contact() {
     <div>
       <Navbar />
       <div className="flex flex-col  justify-center m-auto mb-14  ">
-        <div className=" bg-category  lg:h-[500px] w-full  bg-cover object-cover bg-center">
+        <div className=" bg-contactus  lg:h-[500px] w-full  bg-cover object-cover bg-center">
           <div className="flex flex-col lg:p-14 md:p-14 p-14  gap-4 pt-40 md:pt-40 lg:pt-40  items-center ">
             <h2 className=" text-[16px] leading-[20px] font-inter font-semibold capitalize text-white  tracking-[3px] ">
               Contact us

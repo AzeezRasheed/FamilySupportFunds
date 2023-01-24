@@ -6,7 +6,12 @@ module.exports = {
       backgroundImage: {
         'hero': "url('./assets/HeroImage.png')",
         'category': "url('./assets/homepage-banner.webp')",
-        'donate': "url('./assets/IMG-20230122-WA0008.jpg')",
+        'business': "url('./assets/business2.jpg')",
+        'education': "url('./assets/educationsupport.jpg')",
+        'personal': "url('./assets/personal.jpg')",
+        'realestate': "url('./assets/realestate2.jpg')",
+        'donate': "url('./assets/donate.jpg')",
+        'contactus': "url('./assets/contactus.jpg')",
       },
       fontFamily: {
         "inter":['Inter', "sans-serif"],
