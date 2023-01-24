@@ -7,37 +7,15 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import FIcon from "../../assets/FIcon.png";
 import SIcon from "../../assets/SIcon.png";
-import TIcon from "../../assets/TIcon.png";
 import { useRef } from "react";
-import FthIcon from "../../assets/FthIcon.png";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import dataForCategory from "./dataForCategory";
-import { Country, State, City } from "country-state-city";
+import { State } from "country-state-city";
 import emailjs from "emailjs-com";
-import {
-  BsFillArrowDownCircleFill,
-  BsFillArrowUpCircleFill,
-} from "react-icons/bs";
 
 function Category() {
-  // const states = csc.getStatesOfCountry(country.isoCode);
-  // states.forEach((state) => {
-  //   const cities_of_state = csc.getCitiesOfState(countryCode, state.isoCode);
-  //   console.log(state, ":", cities_of_state);
-  // });
-  // const countryObj = countries.getNames("en", { select: "official" });
-  // const cityArr= City.getCitiesOfState(State.isoCode).map((city) => ({ label: city.name, value: city.id, ...city }));
-  // const countryArr = Object.entries(countryObj).map(([key, value]) => {
-  //   return {
-  //     label: city.name,
-  //     value: key,
-  //   };
-  // });
-
-  // const country = Country.getCountryByCode(countryCode);
-
   const { id } = useParams();
   const type = id.split("-").join(" ");
   const [algorithm, setAlgorithm] = React.useState("");
@@ -81,10 +59,7 @@ function Category() {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedDisability, setSelectedDisability] = useState("");
-  const [selectedAge, setSelectedAge] = useState("");
   const [ethnicity, setEthnicity] = useState("");
-  const [citizenshipStatus, setCitizenshipStatus] = useState("");
-  const [selectedGender, setSelectedGender] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
 
   const selectedStateHandler = (value) => {
@@ -103,13 +78,10 @@ function Category() {
     date_of_birth: "",
     marital_status: "",
     email: "",
-    age: "",
-    gender: "",
     disability: "",
     occupation: "",
     category: "",
     ethnicity: "",
-    citizenshipStatus: "",
   };
 
   useEffect(() => {
@@ -133,7 +105,6 @@ function Category() {
       selectedCity &&
       selectedDisability &&
       ethnicity &&
-      citizenshipStatus &&
       selectedStatus
     ) {
       formData = {
@@ -152,7 +123,6 @@ function Category() {
         disability: selectedDisability,
         occupation: occupation,
         ethnicity: ethnicity,
-        citizenshipStatus: citizenshipStatus,
         category: id,
       };
 
@@ -185,7 +155,6 @@ function Category() {
       setOccupation(" ");
       setIncome(" ");
       setEthnicity(" ");
-      setCitizenshipStatus(" ");
       setSelectedStatus(" ");
       setSelectedDisability(" ");
 
@@ -458,10 +427,7 @@ function Category() {
                 />
               </div>
 
-           
-
               <div className="form-group mb-4 flex flex-row w-full ">
-          
                 <FormControl sx={{ width: "100%" }}>
                   <InputLabel className="  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none   text-gray-700 ">
                     Ethnicity
@@ -805,7 +771,7 @@ function Category() {
                             </li>
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Home Business Assistance
+                            Home Business Support
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
                             Women-Owned Business Funding
@@ -872,7 +838,7 @@ function Category() {
                             Training Support
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Tuition Assistance
+                            Tuition Support
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
                             Support For Research
@@ -992,7 +958,7 @@ function Category() {
                           </li>
                           <li className="text-[14px] font-normal leading-[28px]  ">
                             <li className="text-[14px] font-normal leading-[28px]  ">
-                              Rent Assistance
+                              Rent Support
                             </li>
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
@@ -1002,13 +968,13 @@ function Category() {
                             Food and Nutrition
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Medical Bills Assistance
+                            Medical Bills Support
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Utility Bills Assistance
+                            Utility Bills Support
                           </li>{" "}
                           <li className="text-[14px] font-normal leading-[28px]  ">
-                            Education Assistance
+                            Education Support
                           </li>
                         </ul>
                       </div>
@@ -1032,7 +998,7 @@ function Category() {
                         </li>
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Home Business Assistance
+                        Home Business Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Women-Owned Business Funding
@@ -1067,7 +1033,7 @@ function Category() {
                         Training Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Tuition Assistance
+                        Tuition Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Support For Research
@@ -1121,7 +1087,7 @@ function Category() {
                       </li>
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         <li className="text-[14px] font-normal leading-[28px]  ">
-                          Rent Assistance
+                          Rent Support
                         </li>
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
@@ -1131,13 +1097,13 @@ function Category() {
                         Food and Nutrition
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Medical Bills Assistance
+                        Medical Bills Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Utility Bills Assistance
+                        Utility Bills Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Education Assistance
+                        Education Support
                       </li>
                     </ul>
                   </div>

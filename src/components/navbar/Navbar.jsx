@@ -8,14 +8,19 @@ function Navbar() {
         <div>
           <div className="flex items-center justify-between py-0 pt-2 md:py-5 md:block">
             <a href="/">
-              <span className="text-[20px] leading-[20px] font-bold flex items-center text-white  ">
-                {"{"}SustentationLottery
-              </span>
+             <div className="flex flex-col gap-1 ">
+             <h1 class="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
+                Family Support
+              </h1>
+              <h1 class="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
+              Funds
+              </h1>
+             </div>
             </a>
 
             <div className="md:hidden">
               <button
-                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border transition-shadow duration-150 ease-in-out "
                 onClick={() => setNavbar(!navbar)}
               >
                 {navbar ? (
@@ -52,8 +57,8 @@ function Navbar() {
           </div>
         </div>
 
-        <div className={`md:block  ${navbar ? "block" : "hidden"}`}>
-          <div className="flex flex-col  md:flex-row lg:flex-row items-center border border-gray-800 rounded-lg bg-gray-900 p-4 md:p-0 lg:p-0 lg:border-none lg:bg-transparent md:border-none md:bg-transparent   ">
+        <div className={`md:block   ${navbar ? "block pt-3 md:pt-0 lg:pt-0 " : "hidden"}`}>
+          <div className="flex flex-col  md:flex-row lg:flex-row items-center border border-gray-800 rounded-lg bg-gray-900 p-4  md:p-0 lg:p-0 lg:border-none lg:bg-transparent md:border-none md:bg-transparent   ">
             <ul className="flex flex-col  lg:p-4 md:p-4 mt-0 items-center md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
               <li>
                 <a
@@ -64,7 +69,7 @@ function Navbar() {
                   Home
                 </a>
               </li>
-        
+
               <li>
                 <a
                   href="/about"
@@ -87,18 +92,20 @@ function Navbar() {
                   className="block py-2 pl-3 pr-4 text-white text-[16px] leading-[28px] md:hover:bg-transparent md:hover:text-blue-700 md:p-0  md:dark:hover:text-blue-500  dark:hover:text-blue-50  "
                   ariaCurrent="page"
                 >
-                 Donate
+                  Donate
                 </a>
               </li>
             </ul>
-            <a href="/category/business" className="flex flex-row items-start py-[16px] px-[48px] gap-[12px] bg-white rounded-sm  ">
+            <a
+              href="/category/business"
+              className="flex flex-row items-start py-[16px] px-[48px] gap-[12px] bg-white rounded-full "
+            >
               <span className="text-[18px] font-bold flex items-center text-[#232536] leading-[24px]   ">
                 Apply Now
               </span>
             </a>
           </div>
         </div>
-    
       </div>
     </header>
   );

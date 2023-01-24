@@ -14,7 +14,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 function Category() {
   const [isActive, setIsActive] = useState(false);
   const text =
-    "Last year, Family Support Program sourced the equivalent of 86.7 million financial aid for our 2,950 charity partners, providing financial support to more than a million people every year. Our work makes a positive difference in the lives of Australians, with recipients of financial support reporting they are able to focus and concentrate, are less stressed and more hopeful. Family Support Program not only plays a lead role in fighting poverty, but also a vitally important role in tackling Australia’s family problems. Our financial support rescue operations last year saved 92.7 million kilograms of CO2 emissions. For every financial support provided by Family Support Program, the social return on investment has been valued at $23. This means the impact of Family Support Program work in the community is worth almost $1 billion annually. Despite our very best efforts, the financial support we supply is still not enough. That’s why we rely on the financial sector as well as individuals, corporations, community groups and all levels of government to join us in the fight against poverty.";
+    "Last year, Family Support Funds sourced the equivalent of 86.7 million financial aid for our 2,950 charity partners, providing financial support to more than a million people every year. Our work makes a positive difference in the lives of the people in the United States, with recipients of financial support reporting they are able to focus and concentrate, are less stressed and more hopeful. Family Support Funds not only plays a lead role in fighting poverty, but also a vitally important role in tackling U.S family problems. Our financial support rescue operations last year saved 92.7 million kilograms of CO2 emissions. For every financial support provided by Family Support Funds, the social return on investment has been valued at $23. This means the impact of Family Support Funds work in the community is worth almost $1 billion annually. Despite our very best efforts, the financial support we supply is still not enough. That’s why we rely on the financial sector as well as individuals, corporations, community groups and all levels of government to join us in the fight against poverty.";
   const shortenWord = (text) => {
     return text.substring(0, 320);
   };
@@ -60,7 +60,7 @@ function Category() {
                         </li>
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Home Business Assistance
+                        Home Business Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Women-Owned Business Funding
@@ -121,7 +121,7 @@ function Category() {
                         Training Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Tuition Assistance
+                        Tuition Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         Support For Research
@@ -219,7 +219,7 @@ function Category() {
                       />
                     </div>
                     <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
-                      Personal Assistance
+                      Personal Support
                     </h2>
                     <ul className="flex flex-col font-inter list-disc pl-4 gap-2 pb-4">
                       <li className="text-[14px] font-normal leading-[28px]  ">
@@ -227,7 +227,7 @@ function Category() {
                       </li>
                       <li className="text-[14px] font-normal leading-[28px]  ">
                         <li className="text-[14px] font-normal leading-[28px]  ">
-                          Rent Assistance
+                          Rent Support
                         </li>
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
@@ -237,13 +237,13 @@ function Category() {
                         Food and Nutrition
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Medical Bills Assistance
+                        Medical Bills Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Utility Bills Assistance
+                        Utility Bills Support
                       </li>{" "}
                       <li className="text-[14px] font-normal leading-[28px]  ">
-                        Education Assistance
+                        Education Support
                       </li>
                     </ul>
                   </div>
@@ -267,7 +267,7 @@ function Category() {
           <div className=" w-full lg:w-[706px]     bg-white   shadow-md lg:mt-[158px] lg:-ml-80  ">
             <div className="p-6 flex flex-col gap-3">
               <h2 className=" text-[16px] font-inter leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
-              Our Impact
+                Our Impact
               </h2>
 
               <h1 className="font-bold text-[30px] text-start font-sen  leading-[40px] tracking-[-2px] text-[#232536] lg:w-[546px] ">

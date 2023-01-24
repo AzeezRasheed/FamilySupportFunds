@@ -4,7 +4,7 @@ import Navbar from "../../components/navbar/Navbar";
 
 function Donate() {
   return (
-    <section className="bg-white flex flex-col  justify-center m-auto mb-14">
+    <section className="bg-white flex flex-col  justify-center m-auto ">
       <Navbar />
 
       <div className=" bg-category  lg:h-[500px] w-full  bg-cover object-cover bg-center">
@@ -22,7 +22,7 @@ function Donate() {
         <h1 className="font-bold text-[20px] font-sen  lg:text-[28px] md:text-[24px] lg:leading-[40px] md:leading-[38px] tracking-[-1px] text-[#232536]  ">
             Help Us Help Others
           </h1>
-          <hr className="h-[2px]   bg-orange-500 md:w-[650px] lg:w-[800px] w-[350px] " />
+          <hr className="h-[2px]   bg-orange-500 md:w-[650px] lg:w-[800px] w-[310px] " />
         </div>
       </div>
           <div className="flex flex-col gap-8 text-start m-auto max-w-[800px]">
@@ -31,7 +31,7 @@ function Donate() {
               children, youth and families we work with every day.
             </p>
             <p className="text-[#6D6E76] font-inter  font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px]  ">
-              Family Support Program Australia is a Not For Profit Organisation,
+              Family Support Funds is a Not For Profit Organisation,
               a Public Benevolent Institution, and is endorsed as a Deductible
               Gifts Recipient.
             </p>

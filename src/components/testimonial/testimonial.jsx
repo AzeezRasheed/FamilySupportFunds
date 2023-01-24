@@ -57,7 +57,7 @@ function Testimonial() {
                         <div class=" flex justify-center">
                           <img
                             src={item.pic}
-                            className="rounded-lg w-32 h-28 shadow-lg"
+                            className="rounded-sm w-24 h-24 shadow-lg"
                             alt="sampleimage"
                           />
                         </div>
@@ -103,14 +103,14 @@ function Testimonial() {
 
       <div className="flex flex-col lg:p-10 md:p-10 p-2 mb-8 lg:mb-12 justify-center text-center m-auto mt-8  gap-4 pb-20">
         <h1 className="font-bold text-[20px] font-sen text-center lg:text-[28px] md:text-[24px] lg:leading-[40px] md:leading-[38px] tracking-[-1px] text-[#232536]  ">
-          Get Help From Family Support Program
+          Get Help From Family Support Funds
         </h1>
-        <hr  className="h-[2px] w-full  bg-orange-500 max-w-[600px] m-auto items-center "/>
+        <hr className="h-[2px] w-full  bg-orange-500 max-w-[600px] m-auto items-center " />
         <div className="flex flex-col gap-2 text-start m-auto max-w-[800px]">
           <p className="text-[#6D6E76] font-inter  font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px]  ">
-            Family Support Program provides financial support to more than a
-            million people each year. We are the pantry to Australia’s charity
-            sector, providing financial support to 2,950 frontline charities.
+            Family Support Funds provides financial support to more than a
+            million people each year. We are the pantry to U.S charity sector,
+            providing financial support to 2,950 frontline charities.
           </p>
           <p className="text-[#6D6E76] font-inter  font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px]  ">
             We know one in three people struggling to provide for their
@@ -121,12 +121,12 @@ function Testimonial() {
             we’re here for everyone.
           </p>
           <p className="text-[#6D6E76] font-inter  font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px]  ">
-            Through our wonderful charity partners in Victoria, we’re able to
-            provide 1.2 million financial aid in a month to Victorians in need.
-            People like Mandy, who has struggled to find work to provide for her
-            family due to ongoing health issues. And Deb, a loving Grandmother
-            who’s cancer diagnosis has put her in a position where she struggles
-            to access a steady income.{" "}
+            Through our wonderful charity partners, we’re able to provide 1.2
+            million financial aid in a month to people in need. People like
+            Mandy, who has struggled to find work to provide for her family due
+            to ongoing health issues. And Deb, a loving Grandmother who’s cancer
+            diagnosis has put her in a position where she struggles to access a
+            steady income.{" "}
           </p>
         </div>
         <div>

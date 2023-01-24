@@ -15,9 +15,14 @@ function Footer() {
       <div className="flex flex-col gap-10 ">
         <div className="flex flex-col md:flex-row items-center md:justify-between lg:flex-row lg:justify-between gap-8">
           <a href="/">
-            <span className="text-[20px] leading-[20px] font-bold flex items-center text-white    ">
-              {"{"}LotteryLife
-            </span>
+            <div className="flex flex-col gap-1 ">
+              <h1 class="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
+                Family Support
+              </h1>
+              <h1 class="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
+                Funds
+              </h1>
+            </div>
           </a>
 
           <div className="max-w-screen-xl  overflow-hidden ">
@@ -60,9 +65,9 @@ function Footer() {
           </div>
         </div>
 
-        <div className="relative  ">
-          <div className="  w-full -z-5 h-full absolute bg-white  opacity-5 "></div>
-          <div className="lg:h-[256px] md:h-[256px] w-full z-10   ">
+        <div className="relative z-10  bg-gray-900 opacity-90 ">
+          {/* <div className="  w-full h-full  bg-white  opacity-5 absolute z-0"></div> */}
+          <div className="lg:h-[256px] md:h-[256px] w-full  ">
             <div className="p-10 items-center lg:items-baselineName lg:pt-16 md:pt-10 pt-8 flex flex-col lg:flex-row md:flex-col gap-8  lg:justify-between">
               <h1 className="font-bold text-[24px] font-sen text-start lg:text-[36px] text-white    md:text-[30px]  lg:leading-[48px] md:leading-[38px] tracking-[-1px] text-red  lg:w-[562px] md:w-[450px]   ">
                 Subscribe to our news letter to get latest updates and news
@@ -98,7 +103,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row items-center md:justify-between lg:flex-row lg:justify-between gap-2 ">
           <div className="flex flex-col gap-1">
             <h2 className=" leading-[28px] font-sen text-[16px] font-normal text-white opacity-70 ">
-              &copy; Family Support Program {new Date().getFullYear()}
+              &copy; Family Support Funds {new Date().getFullYear()}
             </h2>
           </div>
 
