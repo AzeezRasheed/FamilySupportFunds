@@ -169,35 +169,36 @@ function Category() {
     <div>
       <Navbar />
       <div className="flex flex-col justify-center m-auto  ">
-        <div className="flex flex-col items-center justify-center w-full m-auto  ">
+        <div className="flex flex-col items-center justify-center w-full m-auto ">
           <div
             className={` ${type === "business" && "bg-business"}  ${
               type === "personal" && "bg-personal"
             } ${type === "education" && "bg-education"}  ${
               type === "real estate" && "bg-realestate"
-            }   lg:h-[500px] w-full  bg-cover object-cover bg-center`}
+            }    w-full  bg-cover object-cover    bg-center`}
           >
-            <div className="flex flex-col pt-40 md:pt-40 lg:pt-40 lg:p-14 md:p-14 p-14  gap-4  items-center ">
+        <div className="bg-gray-800 opacity-70 w-full">
+           <div className="flex flex-col pt-30 md:pt-30 lg:pt-30 lg:p-14 md:p-14 p-14  gap-4  items-center ">
               <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-white capitalize  ">
                 {type} Support
               </h1>
               {type === "personal" && (
-                <p className="text-white font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-gray-300 font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.personal}
                 </p>
               )}
               {type === "business" && (
-                <p className="text-white font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-gray-300 font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.business}
                 </p>
               )}{" "}
               {type === "education" && (
-                <p className="text-white font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-gray-300 font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.education}
                 </p>
               )}{" "}
               {type === "real estate" && (
-                <p className="text-white font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
+                <p className="text-gray-300 font-inter lg:w-[515px] text-center font-light text-[12px] lg:text-[16px] md:text-[16px]  leading-[28px]  ">
                   {data.housing}
                 </p>
               )}
@@ -205,6 +206,7 @@ function Category() {
                 Apply {">"} {type} Support
               </p>
             </div>
+        </div>
           </div>
         </div>
       </div>
