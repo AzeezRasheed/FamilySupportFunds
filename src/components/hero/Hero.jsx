@@ -75,7 +75,7 @@ function Hero() {
             );
           })}
 
-          <div class="absolute mx-auto  bg-gray-800 h-full w-full  opacity-70 px-4 py-6 lg:py-32 md:py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+          <div class="absolute mx-auto  bg-gray-800 h-full w-full  opacity-70 px-4 py-4 lg:py-32 md:py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
             <div class="max-w-xl text-center sm:text-left">
               <h1 class="text-[24px] text-white font-extrabold md:text-5xl lg:text-5xl">
                 Building Hope, Strength And Stability To{" "}
