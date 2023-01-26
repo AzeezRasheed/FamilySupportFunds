@@ -11,7 +11,9 @@ module.exports = {
         'personal': "url('./assets/personal.jpg')",
         'realestate': "url('./assets/realestate2.jpg')",
         'donate': "url('./assets/donate.jpg')",
-        'contactus': "url('./assets/contactus.jpg')",
+        'herobg1': "url('./assets/cdc-SAwxJ8PHY3Q-unsplash.jpg')",
+        'herobg2': "url('./assets/gabriel-tovar-En1Is3KsRZw-unsplash.jpg')",
+        'herobg3': "url('./assets/luca-baini-wwtSYc8p9cI-unsplash.jpg')",
       },
       fontFamily: {
         "inter":['Inter', "sans-serif"],

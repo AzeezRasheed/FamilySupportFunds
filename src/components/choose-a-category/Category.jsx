@@ -270,7 +270,7 @@ function Category() {
                 Our Impact
               </h2>
 
-              <h1 className="font-bold text-[30px] text-start font-sen  leading-[40px] tracking-[-2px] text-[#232536] lg:w-[546px] ">
+              <h1 className="font-bold text-[30px] text-start font-inter  leading-[40px] tracking-[-2px] text-[#232536] lg:w-[546px] ">
                 It started out as a simple idea and evolved into our passion.
               </h1>
 

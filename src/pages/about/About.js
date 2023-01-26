@@ -17,7 +17,7 @@ function About() {
                 About us
               </h2>
 
-              <h1 className="font-bold text-[26px] font-sen text-start lg:text-[40px] md:text-[35px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-[#232536]  ">
+              <h1 className="font-bold text-[26px] font-inter text-start lg:text-[40px] md:text-[35px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-[#232536]  ">
                 We are a community of people who aim to give live changing
                 opportunities
               </h1>
@@ -50,7 +50,7 @@ function About() {
                   <h2 className=" font-inter text-[16px] leading-[20px] text-center font-semibold capitalize text-[#232536]  tracking-[3px] ">
                     Our mision
                   </h2>
-                  <h1 className="font-bold font-sen text-[24px] text-center md:text-start lg:text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
+                  <h1 className="font-bold font-inter text-[24px] text-center md:text-start lg:text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
                     Creating valuable content for creatives all around the world
                   </h1>
                   <p className="text-[#6D6E76] font-inter font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] ">
@@ -70,7 +70,7 @@ function About() {
                     Our Values
                   </h2>
 
-                  <h1 className="font-bold text-[24px] font-sen text-center md:text-start lg:text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
+                  <h1 className="font-bold text-[24px] font-inter text-center md:text-start lg:text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
                     A platform that empowers individuals to improve
                   </h1>
                   <p className="text-[#6D6E76] font-normal  font-inter text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] ">
@@ -119,7 +119,7 @@ function About() {
                   <h2 className=" text-[16px] font-sen leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
                     Our team of creatives
                   </h2>
-                  <h1 className="font-bold text-[24px] font-sen text-start lg:text-[24px] md:text-[24px] lg:leading-[32px] md:leading-[32px] tracking-[-1px] text-[#232536]  ">
+                  <h1 className="font-bold text-[24px] font-inter text-start lg:text-[24px] md:text-[24px] lg:leading-[32px] md:leading-[32px] tracking-[-1px] text-[#232536]  ">
                     To keep U.S citizen success central while providing the
                     highest level of service, and equal opportunity in the
                     awarding of funds at all citizens.
@@ -152,7 +152,7 @@ function About() {
                   <h2 className=" text-[16px] font-sen leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
                     Why we started
                   </h2>
-                  <h1 className="font-bold text-[24px] font-sen text-start lg:text-[24px] md:text-[24px] lg:leading-[32px] md:leading-[32px] tracking-[-1px] text-[#232536]  ">
+                  <h1 className="font-bold text-[24px] font-inter text-start lg:text-[24px] md:text-[24px] lg:leading-[32px] md:leading-[32px] tracking-[-1px] text-[#232536]  ">
                     It started out as a simple idea and evolved into our
                     passion.
                   </h1>

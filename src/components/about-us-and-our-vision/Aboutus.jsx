@@ -32,7 +32,7 @@ function Aboutus() {
                 <h2 className=" text-[16px] font-inter leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
                   About us
                 </h2>
-                <h1 className="font-bold font-sen text-[24px] text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
+                <h1 className="font-bold font-inter text-[24px] text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
                   We are a community of people who aim to give live changing
                   opportunities
                 </h1>
@@ -60,7 +60,7 @@ function Aboutus() {
                   Our mision
                 </h2>
 
-                <h1 className="font-bold font-sen text-[24px] text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
+                <h1 className="font-bold font-inter text-[24px] text-start lg:text-[36px] md:text-[30px] lg:leading-[48px] md:leading-[38px] tracking-[-2px] text-[#232536]  ">
                   Creating valuable life for people all around the world
                 </h1>
                 <p className="text-[#6D6E76] font-inter font-normal text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px] ">
