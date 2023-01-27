@@ -6,6 +6,7 @@ module.exports = {
       backgroundImage: {
         'hero': "url('./assets/HeroImage.png')",
         'category': "url('./assets/homepage-banner.webp')",
+        'contactus': "url('./assets/contactus.jpg')",
         'business': "url('./assets/business2.jpg')",
         'education': "url('./assets/educationsupport.jpg')",
         'personal': "url('./assets/personal.jpg')",
