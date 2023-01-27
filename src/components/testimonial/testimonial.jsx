@@ -39,29 +39,29 @@ function Testimonial() {
               <div className="lg:pl-6 lg:pt-6 lg:w-[50%] ">
                 {list.map((item, index) => (
                   <div
-                    class={`carousel text-start slide relative carousel-dark flex flex-col font-bold text-[#232536] gap-10 lg:gap-20 ${
+                    className={`carousel text-start slide relative carousel-dark flex flex-col font-bold text-[#232536] gap-10 lg:gap-20 ${
                       index === state ? "block" : "hidden"
                     }`}
                     data-bs-ride="carousel"
                     key={index}
                   >
-                    <div class="carousel-inner lg:h-[90px] relative w-full overflow-hidden">
-                      <div class="carousel-item active relative float-left w-full text-start lg:pb-2 ">
-                        <p class="text-xl italic mx-auto text-[#232536] font-sen max-w-4xl">
+                    <div className="carousel-inner lg:h-[90px] relative w-full overflow-hidden">
+                      <div className="carousel-item active relative float-left w-full text-start lg:pb-2 ">
+                        <p className="text-xl italic mx-auto text-[#232536] font-sen max-w-4xl">
                           {item.text}
                         </p>
                       </div>
                     </div>
                     <div className="flex lg:flex-row md:flex-row flex-col gap-8 lg:gap-0 md:gap-0   justify-between items-center ">
                       <div className="flex flex-row items-center  gap-4 ">
-                        <div class=" flex justify-center">
+                        <div className=" flex justify-center">
                           <img
                             src={item.pic}
                             className="rounded-sm w-24 h-24 shadow-lg"
                             alt="sampleimage"
                           />
                         </div>
-                        <p class="text-gray-500 font-sen">-{item.name}</p>
+                        <p className="text-gray-500 font-sen">-{item.name}</p>
                       </div>
                       <div className="flex flex-row gap-8 items-center ">
                         <button
@@ -70,10 +70,10 @@ function Testimonial() {
                           onClick={handlePrevItem}
                         >
                           <span
-                            class="carousel-control-prev-icon  bg-no-repeat"
+                            className="carousel-control-prev-icon  bg-no-repeat"
                             aria-hidden="true"
                           ></span>
-                          <span class="visually-hidden">
+                          <span className="visually-hidden">
                             {" "}
                             <FaArrowLeft />{" "}
                           </span>
@@ -84,10 +84,10 @@ function Testimonial() {
                           onClick={handleNextItem}
                         >
                           <span
-                            class="carousel-control-next-icon  bg-no-repeat"
+                            className="carousel-control-next-icon  bg-no-repeat"
                             aria-hidden="true"
                           ></span>
-                          <span class="visually-hidden">
+                          <span className="visually-hidden">
                             <FaArrowRight />
                           </span>
                         </button>

@@ -9,10 +9,10 @@ function Navbar() {
           <div className="flex items-center justify-between py-0 pt-2 md:py-5 md:block">
             <a href="/">
              <div className="flex flex-col gap-1 ">
-             <h1 class="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
+             <h1 className="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
                 Family Support
               </h1>
-              <h1 class="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
+              <h1 className="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
               Funds
               </h1>
              </div>

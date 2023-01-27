@@ -40,7 +40,7 @@ function About() {
         </div>
 
         <div className="flex flex-col max-w-[1280px] m-auto lg:mb-14 md:mb:14 ">
-          <div class="w-full  rounded ">
+          <div className="w-full  rounded ">
             <img src={Overview} alt="image1" />
           </div>
           <div className="flex flex-col items-center justify-center w-full max-w-screen-2xl m-auto  ">
@@ -133,7 +133,7 @@ function About() {
                   </p>
                 </div>
 
-                <div class="w-full lg:w-[50%] md:w-[50%]  rounded ">
+                <div className="w-full lg:w-[50%] md:w-[50%]  rounded ">
                   <img src={KnowAUs} alt="image1" />
                 </div>
               </div>
