@@ -7,7 +7,7 @@ function Donate() {
     <section className="bg-white flex flex-col  justify-center m-auto ">
       <Navbar />
 
-      <div className=" bg-donate lg:h-[300px] w-full  bg-cover object-cover bg-center">
+      <div className=" bg-donate lg:h-[400px] w-full  bg-cover object-cover bg-center">
         <div className="flex flex-col lg:p-14 md:p-14 p-20 pt-30 lg:pt-32 gap-4  items-center bg-gray-800 h-full opacity-70 w-full">
           <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[-2px] md:leading-[48px] leading-[40px] tracking-[2px] text-slate-100 capitalize  ">
             Donate
@@ -38,7 +38,7 @@ function Donate() {
 
             <p className="text-[#6D6E76] font-inter font-bold  text-[12px] lg:text-[16px] md:text-[16px]  leadind-[28px]  ">
               If you would like to support our work kindly send us a mail at{" "}
-              <span className="text-orange-500"><a href="mailto:email@example.com">Click to Send an Email</a></span>
+              <span className="text-orange-500"><a href="mailto:info@familysupportfunds.org">info@familysupportfunds.org</a></span>
             </p>
           </div>
        
