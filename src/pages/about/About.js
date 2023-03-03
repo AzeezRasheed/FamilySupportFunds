@@ -141,7 +141,7 @@ function About() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row ">
+        <div className="flex flex-col lg:flex-row mb-10 ">
           <div className="flex flex-col items-center justify-center w-full max-w-screen-2xl m-auto  ">
             <div className="  lg:h-[500px] md:h-[500px] w-full ">
               <div className="flex flex-col-reverse  lg:flex-row md:flex-row lg:pt-14 md:pt-14 pt-8  gap-10 lg:items-start md:items-start items-center ">
