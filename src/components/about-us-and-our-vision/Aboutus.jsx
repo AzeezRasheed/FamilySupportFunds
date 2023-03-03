@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 function Aboutus() {
+  
   const text =
     "Families come in all shapes and sizes. No matter how they are constructed, Family Support Funds is committed to supporting them to realise their potential. All families encounter difficult and challenging times and many will find ways to deal with their problems, getting the support they need from friends and relatives.There are times, however, when problems can seem too overwhelming to manage. FSF works to tackle some of the most complex and difficult issues facing families today – including financial hardship, mental health problems, social isolation, learning disabilities, domestic abuse, or substance misuse and alcohol problems.These issues can have a huge impact on the stability of family life, and will have a significant impact on the health, wellbeing and development of all family members. FSF believes that families facing these difficulties should have the support they need to become stronger, happier and healthier. With the right kind of support, families can overcome their difficulties and find hope for a brighter future.";
   const shortenWord = (text) => {
