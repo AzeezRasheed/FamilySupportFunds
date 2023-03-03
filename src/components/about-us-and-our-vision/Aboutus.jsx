@@ -27,7 +27,10 @@ function Aboutus() {
             </div>
           </div>
         </div>
-      <div className="flex flex-col gap-8 lg:w-[50%] md:w-[50%] text-start ">
+        <div className="flex flex-col items-center justify-center w-full max-w-screen-2xl m-auto  ">
+          <div className=" bg-[#F4F0F8]  w-full ">
+            <div className="flex flex-col lg:flex-row md:flex-row lg:p-14 md:p-14 p-8  gap-10 lg:items-start md:items-start items-center ">
+              <div className="flex flex-col gap-8 lg:w-[50%] md:w-[50%] text-start ">
                 <h2 className=" text-[16px] font-inter leading-[20px] font-semibold capitalize text-[#232536]  tracking-[3px] ">
                   About us
                 </h2>
