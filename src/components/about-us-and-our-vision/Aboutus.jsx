@@ -8,6 +8,7 @@ function Aboutus() {
     return text.substring(0, 250);
   };
 
+  
   const [showMore, setShowMore] = useState(false);
   return (
     <section id="about">
