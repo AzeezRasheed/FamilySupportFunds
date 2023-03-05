@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import styled from "styled-components";
+import Logo from "../../assets/{FSF.svg";
+
+const LogoContainer = styled.div``;
 function Footer() {
   const [subscribe, setSubscribe] = useState("");
 
@@ -14,16 +18,15 @@ function Footer() {
     <footer className="bg-[#232536]  p-4 pt-10 lg:p-8   ">
       <div className="flex flex-col gap-10 ">
         <div className="flex flex-col md:flex-row items-center md:justify-between lg:flex-row lg:justify-between gap-8">
-          <a href="/">
-            <div className="flex flex-col gap-1 ">
-              <h1 class="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
-                Family Support
-              </h1>
-              <h1 class="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
-                Funds
-              </h1>
-            </div>
-          </a>
+          <LogoContainer>
+            <a href="/" className="flex items-center justify-between   ">
+              <img
+                src={Logo}
+                alt="Family Support Funds"
+                className=" w-[4rem]  "
+              />
+            </a>
+          </LogoContainer>
 
           <div className="max-w-screen-xl  overflow-hidden ">
             <nav className="flex flex-wrap justify-center font-inter ">

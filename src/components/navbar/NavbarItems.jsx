@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import menuStyles from "./menuStyles";
 import { SCREENS } from "../responsive/Screens";
 import styled, { css } from "styled-components";
+import Logo from "../../assets/{FSF.svg";
 
 const Container = styled.div`
   ${tw`
@@ -65,8 +66,8 @@ const ButtonMd = styled.a`
 flex
 flex-row
 items-start
-py-[16px]
-px-[48px]
+py-[12px]
+px-[24px]
 gap-[12px]
 bg-white
 rounded-full
@@ -89,6 +90,9 @@ rounded-full
 
 `}
 `;
+
+const LogoContainer = styled.div``;
+
 function NavbarItems() {
   const [navbar, setNavbar] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
@@ -97,7 +101,11 @@ function NavbarItems() {
     return (
       <Menu right styles={menuStyles}>
         <Container>
-    
+        <LogoContainer>
+        <a href="/" className="flex items-center justify-between   ">
+         <img src={Logo} alt="Family Support Funds" className=" w-[4rem]  " />
+        </a>
+      </LogoContainer>
           <ListContainer>
             <li>
               <NavItems menu href="/">
@@ -106,8 +114,13 @@ function NavbarItems() {
             </li>
 
             <li>
-              <NavItems menu href="/about">
+              <NavItems menu href="/about-us">
                 About Us
+              </NavItems>
+            </li>
+            <li>
+              <NavItems menu href="/contact-us">
+                Contact Us
               </NavItems>
             </li>
             <li>
@@ -126,15 +139,17 @@ function NavbarItems() {
     );
   }
 
+
   return (
     <Container>
+ 
       <ListContainer>
         <li>
           <NavItems href="/">Home</NavItems>
         </li>
 
         <li>
-          <NavItems href="/about">About Us</NavItems>
+          <NavItems href="/about-us">About Us</NavItems>
         </li>
         <li>
           <NavItems href="/contact-us">Contact Us</NavItems>

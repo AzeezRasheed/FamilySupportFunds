@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import NavbarItems from "./NavbarItems";
+import Logo from "../../assets/{FSF.svg";
 
 // top-0 z-30 w-full py-0 px-4 lg:py-4 md:py-2
 // justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 pb-4 md:pb-0 lg:pb-0
@@ -28,18 +29,9 @@ function Navbar() {
   return (
     <NavbarContainer>
       <LogoContainer>
-        <div className="flex items-center justify-between py-0 pt-2 md:py-5 md:block">
-          <a href="/">
-            <div className="flex flex-col gap-1 ">
-              <h1 className="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
-                Family Support
-              </h1>
-              <h1 className="text-[20px] leading-[20px] font-bold flex  font-inter  text-white text-left ">
-                Funds
-              </h1>
-            </div>
-          </a>
-        </div>
+        <a href="/" className="flex items-center justify-between   ">
+         <img src={Logo} alt="Family Support Funds" className=" w-[4rem] h-[4rem] " />
+        </a>
       </LogoContainer>
 
       <NavbarItems />
