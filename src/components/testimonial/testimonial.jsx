@@ -27,7 +27,7 @@ function Testimonial() {
                   TESTIMONIALs
                 </h2>
 
-                <h1 className="font-bold text-[20px] font-sen text-start lg:text-[28px] md:text-[24px] lg:leading-[40px] md:leading-[38px] tracking-[-1px] text-[#232536] lg:w-[345px] ">
+                <h1 className="font-bold text-[20px] font-inter text-start lg:text-[28px] md:text-[24px] lg:leading-[40px] md:leading-[38px] tracking-[-1px] text-[#232536] lg:w-[345px] ">
                   What people say about our programmes
                 </h1>
               </div>
@@ -47,7 +47,7 @@ function Testimonial() {
                   >
                     <div className="carousel-inner lg:h-[90px] relative w-full overflow-hidden">
                       <div className="carousel-item active relative float-left w-full text-start lg:pb-2 ">
-                        <p className="text-xl italic mx-auto text-[#232536] font-sen max-w-4xl">
+                        <p className="text-xl italic mx-auto text-[#232536] font-inter max-w-4xl">
                           {item.text}
                         </p>
                       </div>
@@ -61,7 +61,7 @@ function Testimonial() {
                             alt="sampleimage"
                           />
                         </div>
-                        <p className="text-gray-500 font-sen">-{item.name}</p>
+                        <p className="text-gray-500 font-inter ">-{item.name}</p>
                       </div>
                       <div className="flex flex-row gap-8 items-center ">
                         <button
@@ -102,7 +102,7 @@ function Testimonial() {
       </div>
 
       <div className="flex flex-col lg:p-10 md:p-10 p-2 mb-8 lg:mb-12 justify-center text-center m-auto mt-8  gap-4 pb-20">
-        <h1 className="font-bold text-[20px] font-sen text-center lg:text-[28px] md:text-[24px] lg:leading-[40px] md:leading-[38px] tracking-[-1px] text-[#232536]  ">
+        <h1 className="font-bold text-[20px] font-inter text-center lg:text-[28px] md:text-[24px] lg:leading-[40px] md:leading-[38px] tracking-[-1px] text-[#232536]  ">
           Get Help From Family Support Funds
         </h1>
         <hr className="h-[2px] w-full  bg-orange-500 max-w-[600px] m-auto items-center " />
@@ -132,7 +132,7 @@ function Testimonial() {
         <div>
           <a href="/category/business">
             <button className="flex flex-row items-start gap-[12px] m-auto  rounded-sm  bg-[#50C0FF] py-[16px] px-[48px] ">
-              <span className="text-[18px] font-sen font-bold flex items-center text-[#232536]  leading-[24px]   ">
+              <span className="text-[18px] font-inter font-bold flex items-center text-[#232536]  leading-[24px]   ">
                 join now
               </span>
             </button>

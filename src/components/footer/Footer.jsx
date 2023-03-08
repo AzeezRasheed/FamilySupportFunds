@@ -41,7 +41,7 @@ function Footer() {
 
               <div className="px-5 py-2">
                 <a
-                  href="/about"
+                  href="/about-us"
                   className="text-base leading-6 text-white hover:text-blue-500"
                 >
                   About Us
@@ -72,7 +72,7 @@ function Footer() {
           {/* <div className="  w-full h-full  bg-white  opacity-5 absolute z-0"></div> */}
           <div className="lg:h-[256px] md:h-[256px] w-full  ">
             <div className="p-10 items-center lg:items-baselineName lg:pt-16 md:pt-10 pt-8 flex flex-col lg:flex-row md:flex-col gap-8  lg:justify-between">
-              <h1 className="font-bold text-[24px] font-sen text-start lg:text-[36px] text-white    md:text-[30px]  lg:leading-[48px] md:leading-[38px] tracking-[-1px] text-red  lg:w-[562px] md:w-[450px]   ">
+              <h1 className="font-bold text-[24px] font-inter text-start lg:text-[36px] text-white    md:text-[30px]  lg:leading-[48px] md:leading-[38px] tracking-[-1px] text-red  lg:w-[562px] md:w-[450px]   ">
                 Subscribe to our news letter to get latest updates and news
               </h1>
 
@@ -95,7 +95,7 @@ function Footer() {
                     }}
                   />
 
-                  <button className="w-full font-sen px-6 py-3 mt-1 text-sm font-bold tracking-wide text-white uppercase transition-none bg-[#50C0FF] hover:bg-blue-400 sm:mt-0 sm:w-auto sm:flex-shrink-0">
+                  <button className="w-full font-inter px-6 py-3 mt-1 text-sm font-bold tracking-wide text-white uppercase transition-none bg-[#50C0FF] hover:bg-blue-400 sm:mt-0 sm:w-auto sm:flex-shrink-0">
                     Subscribe
                   </button>
                 </div>

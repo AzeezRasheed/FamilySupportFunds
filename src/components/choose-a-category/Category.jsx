@@ -25,7 +25,7 @@ function Category() {
       <div className="flex flex-col gap-10">
         <div className="flex flex-col lg:p-10 md:p-10 p-2 justify-center m-auto mt-8 gap-8">
           <div className="flex flex-col ">
-            <h2 className=" p-4 font-sen text-center lg:text-[36px] md:text-[30px] text-[24px] leading-[48px] font-bold capitalize text-[#232536] tracking-[1px] lg:tracking-[-2px] md:tracking-[-2px] #232536 ">
+            <h2 className=" p-4 font-inter text-center lg:text-[36px] md:text-[30px] text-[24px] leading-[48px] font-bold capitalize text-[#232536] tracking-[1px] lg:tracking-[-2px] md:tracking-[-2px] #232536 ">
               Choose A Catagory
             </h2>
           </div>
@@ -47,7 +47,7 @@ function Category() {
                         className="w-[48px] h-[48px] align-middle m-auto flex  "
                       />
                     </div>
-                    <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
+                    <h2 className="text-[#232536] font-inter font-bold text-[28px] leading-[40px] tracking-[-1px] ">
                       Business Support
                     </h2>
                     <ul className="flex flex-col font-inter list-disc pl-4 gap-2">
@@ -77,7 +77,7 @@ function Category() {
                     </ul>
                   </div>
                   <a href="/category/education" className="flex items-start ">
-                    <button className="flex font-sen flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
+                    <button className="flex font-inter flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
                       <span className="text-[18px] font-bold flex items-center text-[#232536] leading-[24px]   ">
                         Apply Now
                       </span>
@@ -102,7 +102,7 @@ function Category() {
                         className="w-[23px] h-[23px] align-middle m-auto flex  "
                       />
                     </div>
-                    <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
+                    <h2 className="text-[#232536] font-inter font-bold text-[28px] leading-[40px] tracking-[-1px] ">
                       Education Support
                     </h2>
                     <ul className="flex flex-col font-inter list-disc pl-4 gap-2 pb-4">
@@ -135,7 +135,7 @@ function Category() {
                     </ul>
                   </div>
                   <a href="/category/education" className="flex items-start ">
-                    <button className="flex font-sen flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
+                    <button className="flex font-inter flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
                       <span className="text-[18px] font-bold flex items-center text-[#232536] leading-[24px]   ">
                         Apply Now
                       </span>
@@ -160,7 +160,7 @@ function Category() {
                         className="w-[48px] h-[48px] align-middle m-auto flex  "
                       />
                     </div>
-                    <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
+                    <h2 className="text-[#232536] font-inter  font-bold text-[28px] leading-[40px] tracking-[-1px] ">
                       Real Estate Support
                     </h2>
                     <ul className="flex flex-col font-inter list-disc pl-4 gap-2 pb-4">
@@ -193,7 +193,7 @@ function Category() {
                     </ul>
                   </div>
                   <a href="/category/real-estate" className="flex items-start ">
-                    <button className="flex font-sen flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
+                    <button className="flex font-inter flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
                       <span className="text-[18px] font-bold flex items-center text-[#232536] leading-[24px]   ">
                         Apply Now
                       </span>
@@ -218,7 +218,7 @@ function Category() {
                         className="w-[48px] h-[48px] align-middle m-auto flex  "
                       />
                     </div>
-                    <h2 className="text-[#232536] font-sen font-bold text-[28px] leading-[40px] tracking-[-1px] ">
+                    <h2 className="text-[#232536] font-inter font-bold text-[28px] leading-[40px] tracking-[-1px] ">
                       Personal Support
                     </h2>
                     <ul className="flex flex-col font-inter list-disc pl-4 gap-2 pb-4">
@@ -248,7 +248,7 @@ function Category() {
                     </ul>
                   </div>
                   <a href="/category/personal" className="flex items-start ">
-                    <button className="flex font-sen flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
+                    <button className="flex font-inter flex-row items-center py-[16px] px-[48px] gap-[12px] bg-[#50C0FF] rounded-sm   ">
                       <span className="text-[18px] font-bold flex items-center text-[#232536] leading-[24px]   ">
                         Apply Now
                       </span>
@@ -278,7 +278,7 @@ function Category() {
               {showMore ? text : `${shortenWord(text)}...`}
               <div>
                 <button
-                  className="flex flex-row items-start font-sen gap-[12px] bg-transparent rounded-sm   "
+                  className="flex flex-row items-start font-inter gap-[12px] bg-transparent rounded-sm   "
                   onClick={() => setShowMore(!showMore)}
                 >
                   {showMore ? (
@@ -302,7 +302,7 @@ function Category() {
           <p className="font-normal text-[#6D6E76] font-inter leading-[20px] text-[14px]   ">
             We are
           </p>
-          <h2 className=" leading-[32px] font-sen text-[#6D6E76] text-[24px] font-bold ">
+          <h2 className=" leading-[32px] font-inter text-[#6D6E76] text-[24px] font-bold ">
             Featured in
           </h2>
         </div>

@@ -49,7 +49,7 @@ function Contact() {
             <h2 className=" text-[16px] leading-[20px] font-inter font-semibold capitalize text-white  tracking-[3px] ">
               Contact us
             </h2>
-            <h1 className="font-bold text-[30px] text-center font-sen lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-white ">
+            <h1 className="font-bold text-[30px] text-center font-inter lg:text-[48px] md:text-[40px] lg:leading-[64px] md:leading-[48px] leading-[40px] tracking-[-2px] text-white ">
               Let’s Start a Conversation
             </h1>
             <p className="text-[#f4f5fb] font-normal font-inter text-[12px] lg:text-[16px] md:text-[16px] text-center leading-[28px] lg:w-[768px] ">
