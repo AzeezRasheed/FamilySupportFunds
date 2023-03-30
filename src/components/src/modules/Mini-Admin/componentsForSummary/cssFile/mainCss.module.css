@@ -1,0 +1,333 @@
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  /* justify-content: space-between; */
+}
+
+.headDisplay {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.0625rem 1.5rem 1.5313rem;
+  gap: 1.5rem;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.headDisplayCard2 {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.0625rem 1.5rem 1.5313rem;
+  gap: 1.5rem;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+#headDisplayRow1 {
+  display: flex;
+  flex-direction: row;
+  gap: 3.4375rem;
+  background-color: #f5f5f5;
+}
+
+#stockTable {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+}
+
+#headDisplayRow2 {
+  display: flex;
+  flex-direction: row;
+  gap: 2.125rem;
+  background-color: #f5f5f5;
+}
+
+#headInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4688rem;
+}
+
+#headInformation h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #262626;
+  border-bottom: 2px dashed #4d4d4d;
+}
+
+#headInformation big {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.inventory {
+  border-collapse: collapse;
+  width: 100%;
+  /* margin-bottom: 0px; */
+}
+
+.inventory tr {
+  height: 56px;
+}
+
+.inventory thead tr th {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+
+.inventory th,
+.inventory td {
+  padding: 3px 40px;
+  text-align: left;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #4d4d4d;
+  border: none;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+#bottle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.0606rem;
+}
+
+.topMenu {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.allDistributors {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+#customWarehouse {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 4px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#customWarehouse h5 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #262626;
+}
+
+#calendar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+  width: fit-content;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  cursor: pointer;
+}
+
+#calendar h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #4d4d4d;
+}
+
+#reportDownload {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 4px;
+  gap: 8px;
+  cursor: pointer;
+}
+
+#reportDownload h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4d4d4d;
+}
+
+#radioButtons {
+  background: url("../../../../assets/svg/searchIcon.svg");
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: 10px;
+  width: auto;
+  height: 40px;
+  background-color: #ebebeb;
+  border-radius: 4px;
+  padding: 0px 10px;
+
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #737373;
+  margin: 25px 0px;
+  position: relative;
+}
+
+#radioButtons::placeholder {
+  /* padding: 3px 28px; */
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #737373;
+}
+
+.radioContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 14px;
+  padding: 8px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #4d4d4d;
+}
+
+/* input[type="radio"] {
+  display: none;
+} */
+
+#label {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  padding-right: 32px;
+  /* padding-top: 15px; */
+}
+
+#label:nth-last-child(1) {
+  padding-right: 0;
+}
+
+#label::before {
+  content: "";
+  border: 1px solid #737373;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: -10px 20px;
+  margin-left: 0;
+  border-radius: 50%;
+}
+
+#label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 2.69px;
+  top: 10.79px;
+  margin: -6px 10px;
+  margin-left: 0;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+input[type="radio"]:checked+#label::after {
+  background: #d69e77;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1124px) and (-webkit-min-device-pixel-ratio: 1) {
+  /* .cardContainer {
+    flex-direction: column;
+    gap: 2.125rem;
+  }
+  .headDisplay {
+    display: flex;
+    flex-direction: row;
+    padding: 1.5rem 1.0625rem 1.5rem 1.5313rem;
+    gap: 1.5rem;
+  }
+  .headDisplayCard2 {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.0625rem 1.5rem 1.5313rem;
+    gap: 1.5rem;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  } */
+
+  #label::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 2.6px;
+    top: 10.3px;
+    margin: -6px 10px;
+    margin-left: 0;
+    border-radius: 50%;
+    transition: all 0.4s;
+  }
+
+}

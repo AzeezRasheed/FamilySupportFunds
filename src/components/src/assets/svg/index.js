@@ -1,0 +1,13 @@
+export { ReactComponent as RedErrorMark } from './redErrorMark.svg';
+export { ReactComponent as ErrorMark } from './error.svg';
+export { ReactComponent as Mark } from './mark.svg';
+export { ReactComponent as Back } from './back.svg';
+export { ReactComponent as PasswordKey } from './key.svg';
+export { ReactComponent as RecieveStock } from './recieveStock.svg';
+export { ReactComponent as CaptureSales } from './captureSales.svg';
+export { ReactComponent as StockOut } from './stockOut.svg';
+export { ReactComponent as SendReport } from './sendReport.svg';
+export { ReactComponent as User } from './User.svg';
+export { ReactComponent as Sort } from './sort.svg';
+export { ReactComponent as ArrowDown } from './arrowDown.svg';
+export { ReactComponent as Plus } from './plus.svg';
